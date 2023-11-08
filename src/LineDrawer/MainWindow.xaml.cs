@@ -29,11 +29,19 @@ namespace LineDrawer
         
         public MainWindow()
         {
+            ObservableCollection<ProducerModelInfo> modelCollection;
 
-            var presetsJson = File.ReadAllText("Presets\\presets.json");
-            var presetItems = JsonConvert.DeserializeObject<ProducerModelInfo[]>(presetsJson);
-            var modelCollection = new ObservableCollection<ProducerModelInfo>(presetItems);
-            
+            try
+            {
+                var presetsJson = File.ReadAllText("Presets\\presets.json");
+                var presetItems = JsonConvert.DeserializeObject<ProducerModelInfo[]>(presetsJson);
+                modelCollection = new ObservableCollection<ProducerModelInfo>(presetItems);
+            }
+            catch
+            {
+                modelCollection = new ObservableCollection<ProducerModelInfo>();
+            }
+
             this.model = new DrawingModel
             {
                 Joints = new ObservableCollection<JointModelInfo>(),
@@ -47,7 +55,9 @@ namespace LineDrawer
 
             InitializeComponent();
             this.DataContext = this.model;
-            this.PresetsComboBox.SelectedItem = modelCollection.First();
+            
+            if (modelCollection.Count > 0)
+                this.PresetsComboBox.SelectedItem = modelCollection.First();
             
             this.Reset();
             Task.Run(this.Run);
