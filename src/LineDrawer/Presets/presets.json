@@ -1,0 +1,10 @@
+[
+{"Name":"Simple-dimple","Joints":[{"Size":10,"Speed":1110},{"Size":100,"Speed":100},{"Size":90,"Speed":3330}]},
+{"Name":"Porky","Joints":[{"Size":10,"Speed":3000},{"Size":90,"Speed":2000}]},
+{"Name":"Flower","Joints":[{"Size":10,"Speed":3200},{"Size":90,"Speed":2000}]},
+{"Name":"Flower longer","Joints":[{"Size":10,"Speed":3200},{"Size":90,"Speed":1100}]},
+{"Name":"Triada","Joints":[{"Size":5,"Speed":10000},{"Size":150,"Speed":10},{"Size":90,"Speed":30000}]},
+{"Name":"Grannies' Pie","Joints":[{"Size":22,"Speed":1000},{"Size":150,"Speed":1},{"Size":90,"Speed":5000},{"Size":40,"Speed":1000}]},
+{"Name":"Diabotical","Joints":[{"Size":22,"Speed":1000},{"Size":150,"Speed":1},{"Size":90,"Speed":5000},{"Size":60,"Speed":-20000}]},
+{"Name":"Pie revert","Joints":[{"Size":22,"Speed":1000},{"Size":150,"Speed":1},{"Size":90,"Speed":5000},{"Size":60,"Speed":-20000}]}
+]
