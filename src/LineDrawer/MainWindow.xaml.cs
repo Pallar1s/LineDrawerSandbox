@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -27,6 +28,8 @@ namespace LineDrawer
 
         private Matrix3x2 scaleTransform;
         private readonly DrawingModel model;
+        
+        private long producerVersion = 0;
         
         public MainWindow()
         {
@@ -73,6 +76,7 @@ namespace LineDrawer
         private void Reset()
         {
             this.model.PauseRender = true;
+            this.producerVersion = DateTime.UtcNow.Ticks;
             this.model.PreviousPositions = null;
             
             var maxSize = this.model.Joints.Sum(x => x.Size) + 10.0f;
@@ -89,6 +93,7 @@ namespace LineDrawer
                 Speed = this.model.OverallSpeed * 0.1f
             };
             
+            
             this.bitmap.Clear();
             this.model.PauseRender = false;
         }
@@ -99,20 +104,23 @@ namespace LineDrawer
             {
                 if (this.model.Halt)
                     return;
-                
-                if (!this.model.PauseRender)
+
+                var currentVersion = this.producerVersion;
+                if (!this.model.PauseRender && currentVersion == this.producerVersion)
                 {
                     var positions = this.producer.Tick().ToArray();
 
                     this.Dispatcher.Invoke(() =>
                     {
-                        if (this.model.Halt)
+                        if (this.model.Halt || this.model.PauseRender)
                             return;
                         
-                        DrawModel(positions);
+                        if (currentVersion == this.producerVersion)
+                            DrawModel(positions);
                     });
 
-                    this.model.PreviousPositions = positions;
+                    if (!this.model.PauseRender && currentVersion == this.producerVersion)
+                        this.model.PreviousPositions = positions;
                 }
 
                 await Task.Delay(10);
