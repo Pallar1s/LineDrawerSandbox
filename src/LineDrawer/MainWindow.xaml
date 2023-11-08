@@ -6,7 +6,8 @@
         mc:Ignorable="d"
         Name="NamedWindow"
         Title="MainWindow" Height="800" Width="1000"
-        xmlns:local="clr-namespace:LineDrawer">
+        xmlns:local="clr-namespace:LineDrawer"
+        Closing="MainWindow_OnClosing">
     <Window.DataContext>
         <local:DrawingModel/>
     </Window.DataContext>

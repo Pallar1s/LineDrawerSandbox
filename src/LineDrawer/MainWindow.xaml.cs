@@ -59,8 +59,6 @@ namespace LineDrawer
                 this.producer.Speed = this.model.OverallSpeed * 0.1f;
         }
 
-        public DrawingModel Model { get; }
-
         private void Reset()
         {
             this.model.PauseRender = true;
@@ -88,12 +86,18 @@ namespace LineDrawer
         {
             while (true)
             {
+                if (this.model.Halt)
+                    return;
+                
                 if (!this.model.PauseRender)
                 {
                     var positions = this.producer.Tick().ToArray();
 
                     this.Dispatcher.Invoke(() =>
                     {
+                        if (this.model.Halt)
+                            return;
+                        
                         DrawModel(positions);
                     });
 
@@ -165,6 +169,11 @@ namespace LineDrawer
                     this.model.Joints.Add(info);
                 }
             }
+        }
+
+        private void MainWindow_OnClosing(object? sender, CancelEventArgs e)
+        {
+            this.model.Halt = true;
         }
     }
 }

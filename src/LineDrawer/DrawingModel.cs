@@ -40,6 +40,8 @@ namespace LineDrawer
         
         public bool PauseRender { get; set; }
         
+        public bool Halt { get; set; }
+        
         public Vector2[]? PreviousPositions { get; set; }
         
         public ObservableCollection<ProducerModelInfo> Presets { get; set; }
