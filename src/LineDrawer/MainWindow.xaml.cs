@@ -22,6 +22,7 @@ namespace LineDrawer
 
         private const int BitmapSize = 2000;
         private const int BitmapSizeHalf = BitmapSize / 2;
+        
         private WriteableBitmap bitmap = new WriteableBitmap(BitmapSize, BitmapSize, 96, 96, PixelFormats.Bgr32, null);
 
         private Matrix3x2 scaleTransform;
@@ -126,10 +127,10 @@ namespace LineDrawer
                 foreach (var pos in this.model.PreviousPositions)
                 {
                     this.bitmap.DrawLineAa(
-                        (int)(pos.X * BitmapSize / 2) + BitmapSizeHalf,
-                        (int)(pos.Y * BitmapSize / 2) + BitmapSizeHalf,
-                        (int)(positions[i].X * BitmapSize / 2) + BitmapSizeHalf,
-                        (int)(positions[i].Y * BitmapSize / 2) + BitmapSizeHalf, Colors.White, 4);
+                        (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf,
+                        (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf,
+                        (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf,
+                        (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, Colors.White, 4);
                     i++;
                 }
             }

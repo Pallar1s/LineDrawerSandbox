@@ -41,7 +41,7 @@
             <ComboBox Name="PresetsComboBox" DisplayMemberPath="Name" ItemsSource="{Binding Path=Presets}" SelectionChanged="PresetsComboBox_OnSelectionChanged"/>
             <TextBlock Text="Параметры узлов" />
             <DataGrid x:Name="JointsGrid" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="false" CanUserResizeRows="false" AutoGenerateColumns="True" ItemsSource="{Binding Path=Joints,Mode=TwoWay}"/>
-            <Button x:Name="ResetButton" Click="ResetButton_OnClick" Content="Reset"/>
+            <Button x:Name="ResetButton" Click="ResetButton_OnClick" Content="Restart"/>
             
             <CheckBox FlowDirection="RightToLeft" IsChecked="{Binding Path=ShowJoints, Mode=TwoWay}">
                 <TextBlock FlowDirection="LeftToRight" Text="Рисовать направляющие" />
