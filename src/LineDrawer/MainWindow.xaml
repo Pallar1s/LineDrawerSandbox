@@ -47,6 +47,10 @@
                 <TextBlock FlowDirection="LeftToRight" Text="Рисовать направляющие" />
             </CheckBox>
             
+            <CheckBox FlowDirection="RightToLeft" IsChecked="{Binding Path=ShowTrace, Mode=TwoWay}">
+                <TextBlock FlowDirection="LeftToRight" Text="Рисовать след" />
+            </CheckBox>
+            
             <CheckBox FlowDirection="RightToLeft" IsChecked="{Binding Path=UseGradient, Mode=TwoWay}">
                 <TextBlock FlowDirection="LeftToRight" Text="Градиентные цвета" />
             </CheckBox>

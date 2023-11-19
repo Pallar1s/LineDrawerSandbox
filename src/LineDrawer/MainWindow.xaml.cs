@@ -58,6 +58,7 @@ namespace LineDrawer
                 OverallSpeed = 2,
                 PauseRender = true,
                 ShowJoints = true,
+                ShowTrace = true,
                 Presets = modelCollection 
             };
             
@@ -159,50 +160,57 @@ namespace LineDrawer
                         (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf,
                         (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf,
                         (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf,
-                        (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, drawBitmapColor, 4);
+                        (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, drawBitmapColor, 6);
                     i++;
                 }
             }
 
             this.MainImage.Source = this.bitmap;
-
             this.MainCanvas.Children.Clear();
 
-            if (this.model.ShowJoints)
-            {
-                var prevX = 0;
-                var prevY = 0;
+            var prevX = 0;
+            var prevY = 0;
 
-                Vector2 lastPos = default;
+            Vector2 lastPos = default;
+
+            if (this.model.ShowJoints || this.model.ShowTrace)
+            {
                 foreach (var pos in positions)
                 {
                     var vector = Vector2.Transform(pos, this.scaleTransform);
                     var newX = (int)vector.X;
                     var newY = (int)vector.Y;
-                    
-                    this.MainCanvas.DrawCircle(newX, newY, 10, 10, new Color {R = 255, A = 255});
-                    this.MainCanvas.DrawLine(prevX, prevY, newX, newY, color:Color.FromRgb(0,255,0));
-                                
+
+                    if (this.model.ShowJoints)
+                    {
+                        this.MainCanvas.DrawCircle(newX, newY, 10, 10, new Color { R = 255, A = 255 });
+                        this.MainCanvas.DrawLine(prevX, prevY, newX, newY, color: Color.FromRgb(0, 255, 0));
+                    }
+
                     prevX = newX;
                     prevY = newY;
                     lastPos = pos;
                 }
+
                 this.traceQueue.Enqueue(lastPos);
 
                 if (this.traceQueue.Count > TraceLength)
                     this.traceQueue.Dequeue();
 
-                var i = 0;
-                var traceColor = drawTraceColor;
-                foreach (var item in this.traceQueue)
+                if (this.model.ShowTrace)
                 {
-                    double opacity = i / (double)TraceLength;
-                    var vector = Vector2.Transform(item, this.scaleTransform);
-                    var newX = (int)vector.X;
-                    var newY = (int)vector.Y;
-                    traceColor.A = (byte)(opacity * 255);
-                    this.MainCanvas.DrawCircle(newX, newY, (int)(20 * opacity), (int)(20 * opacity), traceColor);
-                    i++;
+                    var i = 0;
+                    var traceColor = drawTraceColor;
+                    foreach (var item in this.traceQueue)
+                    {
+                        double opacity = i / (double)TraceLength;
+                        var vector = Vector2.Transform(item, this.scaleTransform);
+                        var newX = (int)vector.X;
+                        var newY = (int)vector.Y;
+                        traceColor.A = (byte)(opacity * 255);
+                        this.MainCanvas.DrawCircle(newX, newY, (int)(20 * opacity), (int)(20 * opacity), traceColor);
+                        i++;
+                    }
                 }
             }
         }

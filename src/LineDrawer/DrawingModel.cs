@@ -9,10 +9,12 @@ namespace LineDrawer
     public class DrawingModel : INotifyPropertyChanged
     {
         private bool showJoints;
+        private bool showTrace;
         private int overallSpeed;
         private bool useGradient;
         
         public ObservableCollection<JointModelInfo> Joints { get; set; }
+        
         public bool ShowJoints
         {
             get => this.showJoints;
@@ -21,6 +23,19 @@ namespace LineDrawer
                 if (this.showJoints != value)
                 {
                     this.showJoints = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+        
+        public bool ShowTrace
+        {
+            get => this.showTrace;
+            set
+            {
+                if (this.showTrace != value)
+                {
+                    this.showTrace = value;
                     this.OnPropertyChanged();
                 }
             }
