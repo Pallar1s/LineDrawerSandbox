@@ -16,6 +16,7 @@
   {"Name":"Inception","Joints":[{"Size":70,"Speed":2000},{"Size":300,"Speed":-3000},{"Size":150,"Speed":3000},{"Size":40,"Speed":-3000},{"Size":70,"Speed":-9000}]},
   {"Name":"Vaze","Joints":[{"Size":70,"Speed":2000},{"Size":300,"Speed":-3000},{"Size":150,"Speed":3000},{"Size":40,"Speed":-3000},{"Size":70,"Speed":-9000},{"Size":250,"Speed":8000}]},
  {"Name":"Triumph","Joints":[{"Size":70,"Speed":2000},{"Size":300,"Speed":-3000},{"Size":150,"Speed":3000},{"Size":40,"Speed":-3000},{"Size":70,"Speed":9000},{"Size":250,"Speed":-8000}]},
-  {"Name":"Pizza","Joints":[{"Size":70,"Speed":3500},{"Size":300,"Speed":-3000},{"Size":150,"Speed":5000},{"Size":40,"Speed":-3000},{"Size":70,"Speed":-9000}]},
-{"Name":"Infinity","Joints":[{"Size":70,"Speed":2000},{"Size":200,"Speed":-3000},{"Size":150,"Speed":3000},{"Size":400,"Speed":-3000},{"Size":700,"Speed":4000},{"Size":250,"Speed":-3000}]}
+  {"Name":"Zombie","Joints":[{"Size":70,"Speed":3500},{"Size":300,"Speed":-3000},{"Size":150,"Speed":5000},{"Size":40,"Speed":-3000},{"Size":70,"Speed":-9000}]},
+  {"Name":"Pizza","Joints":[{"Size":70,"Speed":3500},{"Size":300,"Speed":-3000},{"Size":150,"Speed":3000},{"Size":40,"Speed":-3000},{"Size":70,"Speed":-9000}]},
+  {"Name":"Infinity","Joints":[{"Size":70,"Speed":2000},{"Size":200,"Speed":-3000},{"Size":150,"Speed":3000},{"Size":400,"Speed":-3000},{"Size":700,"Speed":4000},{"Size":250,"Speed":-3000}]}
 ]

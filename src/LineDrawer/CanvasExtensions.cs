@@ -6,12 +6,9 @@ namespace LineDrawer
 {
     public static class CanvasExtensions
     {
-        public static void DrawCircle(this Canvas cv, int x, int y, int width, int height, double opacity)
+        public static void DrawCircle(this Canvas cv, int x, int y, int width, int height, Color color)
         {
-            var brush = new SolidColorBrush(new Color {R = 255, A = (byte)(opacity*255)})
-            {
-                Opacity = opacity
-            };
+            var brush = new SolidColorBrush {Color = color};
             Ellipse circle = new Ellipse
             {
                 Width = width,
@@ -26,7 +23,7 @@ namespace LineDrawer
             circle.SetValue(Canvas.TopProperty, (double)y - height/2);
         }
 
-        public static void DrawLine(this Canvas cv, int x1, int y1, int x2, int y2)
+        public static void DrawLine(this Canvas cv, int x1, int y1, int x2, int y2, Color color)
         {
             Line line = new Line
             {
@@ -34,7 +31,7 @@ namespace LineDrawer
                 Y1 = y1,
                 X2 = x2,
                 Y2 = y2,
-                Stroke = Brushes.Green,
+                Stroke = new SolidColorBrush {Color = color},
                 StrokeThickness = 5
             };
 

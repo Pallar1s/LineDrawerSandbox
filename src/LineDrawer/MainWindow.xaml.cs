@@ -25,6 +25,9 @@ namespace LineDrawer
         private const int TraceLength = 35;
         private const int BitmapSize = 2000;
         private const int BitmapSizeHalf = BitmapSize / 2;
+        private double colorIteration = 0.0d;
+        private Color defaultBitmapColor = Colors.White;
+        private Color defaultTraceColor = Colors.Red;
         
         private WriteableBitmap bitmap = new WriteableBitmap(BitmapSize, BitmapSize, 96, 96, PixelFormats.Bgr32, null);
         private Queue<Vector2> traceQueue = new Queue<Vector2>(TraceLength);
@@ -132,6 +135,21 @@ namespace LineDrawer
 
         private void DrawModel(Vector2[] positions)
         {
+            var drawTraceColor = this.defaultTraceColor;
+            var drawBitmapColor = this.defaultBitmapColor;
+
+            if (this.model.UseGradient)
+            {
+                var gradientColor = ColorExtensions.Hsl2Rgb(this.colorIteration, 0.5, 0.5);
+                this.colorIteration += 0.001;
+
+                if (this.colorIteration >= 1.0d)
+                    this.colorIteration = 0;
+
+                drawTraceColor = gradientColor;
+                drawBitmapColor = gradientColor;
+            }
+
             if (this.model.PreviousPositions != null)
             {
                 var i = 0;
@@ -141,7 +159,7 @@ namespace LineDrawer
                         (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf,
                         (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf,
                         (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf,
-                        (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, Colors.White, 4);
+                        (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, drawBitmapColor, 4);
                     i++;
                 }
             }
@@ -161,8 +179,9 @@ namespace LineDrawer
                     var vector = Vector2.Transform(pos, this.scaleTransform);
                     var newX = (int)vector.X;
                     var newY = (int)vector.Y;
-                    this.MainCanvas.DrawCircle(newX, newY, 10, 10, 1.0d);
-                    this.MainCanvas.DrawLine(prevX, prevY, newX, newY);
+                    
+                    this.MainCanvas.DrawCircle(newX, newY, 10, 10, new Color {R = 255, A = 255});
+                    this.MainCanvas.DrawLine(prevX, prevY, newX, newY, color:Color.FromRgb(0,255,0));
                                 
                     prevX = newX;
                     prevY = newY;
@@ -174,13 +193,15 @@ namespace LineDrawer
                     this.traceQueue.Dequeue();
 
                 var i = 0;
+                var traceColor = drawTraceColor;
                 foreach (var item in this.traceQueue)
                 {
                     double opacity = i / (double)TraceLength;
                     var vector = Vector2.Transform(item, this.scaleTransform);
                     var newX = (int)vector.X;
                     var newY = (int)vector.Y;
-                    this.MainCanvas.DrawCircle(newX, newY, 20, 20, opacity);
+                    traceColor.A = (byte)(opacity * 255);
+                    this.MainCanvas.DrawCircle(newX, newY, (int)(20 * opacity), (int)(20 * opacity), traceColor);
                     i++;
                 }
             }

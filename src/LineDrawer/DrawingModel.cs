@@ -10,6 +10,7 @@ namespace LineDrawer
     {
         private bool showJoints;
         private int overallSpeed;
+        private bool useGradient;
         
         public ObservableCollection<JointModelInfo> Joints { get; set; }
         public bool ShowJoints
@@ -38,6 +39,19 @@ namespace LineDrawer
             }
         }
         
+        public bool UseGradient
+        {
+            get => this.useGradient;
+            set
+            {
+                if (this.useGradient != value)
+                {
+                    this.useGradient = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
         public bool PauseRender { get; set; }
         
         public bool Halt { get; set; }
