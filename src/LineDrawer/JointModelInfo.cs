@@ -8,6 +8,8 @@ namespace LineDrawer
     {
         private int size;
         private int speed;
+        private bool enabled = true;
+        
         public int Size
         {
             get { return this.size;}
@@ -35,7 +37,24 @@ namespace LineDrawer
                 }
             }
         }
-        
+
+        public bool Enabled
+        {
+            get
+            {
+                return this.enabled;
+            }
+            
+            set
+            {
+                if (value != this.enabled)
+                {
+                    this.enabled = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler? PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

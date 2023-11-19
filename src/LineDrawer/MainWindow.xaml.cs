@@ -156,11 +156,17 @@ namespace LineDrawer
                 var i = 0;
                 foreach (var pos in this.model.PreviousPositions)
                 {
-                    this.bitmap.DrawLineAa(
-                        (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf,
-                        (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf,
-                        (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf,
-                        (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, drawBitmapColor, 6);
+                    var modelJoint = this.model.Joints[i];
+
+                    if (modelJoint.Enabled)
+                    {
+                        this.bitmap.DrawLineAa(
+                            (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf,
+                            (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf,
+                            (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf,
+                            (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, drawBitmapColor, 6);
+                    }
+
                     i++;
                 }
             }
