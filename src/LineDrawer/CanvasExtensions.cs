@@ -6,16 +6,20 @@ namespace LineDrawer
 {
     public static class CanvasExtensions
     {
-        public static void DrawCircle(this Canvas cv, int x, int y, int width, int height)
+        public static void DrawCircle(this Canvas cv, int x, int y, int width, int height, double opacity)
         {
+            var brush = new SolidColorBrush(new Color {R = 255, A = (byte)(opacity*255)})
+            {
+                Opacity = opacity
+            };
             Ellipse circle = new Ellipse
             {
                 Width = width,
                 Height = height,
-                Stroke = Brushes.Red,
-                StrokeThickness = 6
+                Fill = brush
             };
 
+            circle.Opacity = 0.5;
             cv.Children.Add(circle);
 
             circle.SetValue(Canvas.LeftProperty, (double)x - width/2);

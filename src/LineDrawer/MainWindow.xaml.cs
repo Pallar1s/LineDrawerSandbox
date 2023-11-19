@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
@@ -21,10 +22,12 @@ namespace LineDrawer
     {
         private JointImageProducer producer;
 
+        private const int TraceLength = 35;
         private const int BitmapSize = 2000;
         private const int BitmapSizeHalf = BitmapSize / 2;
         
         private WriteableBitmap bitmap = new WriteableBitmap(BitmapSize, BitmapSize, 96, 96, PixelFormats.Bgr32, null);
+        private Queue<Vector2> traceQueue = new Queue<Vector2>(TraceLength);
 
         private Matrix3x2 scaleTransform;
         private readonly DrawingModel model;
@@ -49,7 +52,7 @@ namespace LineDrawer
             this.model = new DrawingModel
             {
                 Joints = new ObservableCollection<JointModelInfo>(),
-                OverallSpeed = 10,
+                OverallSpeed = 2,
                 PauseRender = true,
                 ShowJoints = true,
                 Presets = modelCollection 
@@ -93,7 +96,7 @@ namespace LineDrawer
                 Speed = this.model.OverallSpeed * 0.1f
             };
             
-            
+            this.traceQueue.Clear();
             this.bitmap.Clear();
             this.model.PauseRender = false;
         }
@@ -152,16 +155,33 @@ namespace LineDrawer
                 var prevX = 0;
                 var prevY = 0;
 
+                Vector2 lastPos = default;
                 foreach (var pos in positions)
                 {
                     var vector = Vector2.Transform(pos, this.scaleTransform);
                     var newX = (int)vector.X;
                     var newY = (int)vector.Y;
-                    this.MainCanvas.DrawCircle(newX, newY, 10, 10);
+                    this.MainCanvas.DrawCircle(newX, newY, 10, 10, 1.0d);
                     this.MainCanvas.DrawLine(prevX, prevY, newX, newY);
                                 
                     prevX = newX;
                     prevY = newY;
+                    lastPos = pos;
+                }
+                this.traceQueue.Enqueue(lastPos);
+
+                if (this.traceQueue.Count > TraceLength)
+                    this.traceQueue.Dequeue();
+
+                var i = 0;
+                foreach (var item in this.traceQueue)
+                {
+                    double opacity = i / (double)TraceLength;
+                    var vector = Vector2.Transform(item, this.scaleTransform);
+                    var newX = (int)vector.X;
+                    var newY = (int)vector.Y;
+                    this.MainCanvas.DrawCircle(newX, newY, 20, 20, opacity);
+                    i++;
                 }
             }
         }
