@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 
@@ -20,7 +21,7 @@ namespace ImageProducer
             }
         }
 
-        public IEnumerable<Vector2> Tick()
+        public IEnumerable<Vector2> Tick(TimeSpan dt)
         {
             var currentTransform = Matrix3x2.Identity;
             var i = 0;
@@ -28,7 +29,7 @@ namespace ImageProducer
             
             foreach (var jointTransform in this.jointTransforms)
             {
-                var currentJointTransform = jointTransform * Matrix3x2.CreateRotation(this.joints[i].Speed * this.speed);
+                var currentJointTransform = jointTransform * Matrix3x2.CreateRotation(this.joints[i].Speed * this.speed * (float)(dt.TotalSeconds*10));
                 currentTransform = currentJointTransform * currentTransform;
                 newTransforms.Add(currentJointTransform);
                 yield return currentTransform.Translation;

@@ -33,6 +33,7 @@ namespace LineDrawer
         private Queue<Vector2> traceQueue = new Queue<Vector2>(TraceLength);
 
         private Matrix3x2 scaleTransform;
+        private DateTime previousTime;
         private readonly DrawingModel model;
         
         private long producerVersion = 0;
@@ -71,6 +72,7 @@ namespace LineDrawer
                 this.PresetsComboBox.SelectedItem = modelCollection.First();
             
             this.Reset();
+            previousTime = DateTime.Now;
             Task.Run(this.Run);
         }
 
@@ -113,9 +115,10 @@ namespace LineDrawer
                     return;
 
                 var currentVersion = this.producerVersion;
+                var currentTime = DateTime.Now;
                 if (!this.model.PauseRender && currentVersion == this.producerVersion)
                 {
-                    var positions = this.producer.Tick().ToArray();
+                    var positions = this.producer.Tick(currentTime - previousTime).ToArray();
 
                     this.Dispatcher.Invoke(() =>
                     {
@@ -131,6 +134,7 @@ namespace LineDrawer
                 }
 
                 await Task.Delay(10);
+                this.previousTime = currentTime;
             }
         }
 
