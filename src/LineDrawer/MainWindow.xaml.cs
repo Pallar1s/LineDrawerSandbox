@@ -56,7 +56,7 @@ namespace LineDrawer
             this.model = new DrawingModel
             {
                 Joints = new ObservableCollection<JointModelInfo>(),
-                OverallSpeed = 2,
+                OverallSpeed = 0,
                 PauseRender = true,
                 ShowJoints = true,
                 ShowTrace = true,
