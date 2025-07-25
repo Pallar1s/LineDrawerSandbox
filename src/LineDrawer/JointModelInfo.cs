@@ -9,6 +9,9 @@ namespace LineDrawer
         private int size;
         private int speed;
         private bool enabled = true;
+        private bool pulseEnabled = false;
+        private float pulseMinCoef = 0.5f;
+        private float pulseSpeed = 1.0f;
         
         public int Size
         {
@@ -50,6 +53,45 @@ namespace LineDrawer
                 if (value != this.enabled)
                 {
                     this.enabled = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public bool PulseEnabled
+        {
+            get => this.pulseEnabled;
+            set
+            {
+                if (this.pulseEnabled != value)
+                {
+                    this.pulseEnabled = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public float PulseMinCoef
+        {
+            get => this.pulseMinCoef;
+            set
+            {
+                if (this.pulseMinCoef != value)
+                {
+                    this.pulseMinCoef = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public float PulseSpeed
+        {
+            get => this.pulseSpeed;
+            set
+            {
+                if (this.pulseSpeed != value)
+                {
+                    this.pulseSpeed = value;
                     this.OnPropertyChanged();
                 }
             }

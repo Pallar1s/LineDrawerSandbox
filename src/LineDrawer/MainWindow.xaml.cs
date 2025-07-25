@@ -56,7 +56,7 @@ namespace LineDrawer
             this.model = new DrawingModel
             {
                 Joints = new ObservableCollection<JointModelInfo>(),
-                OverallSpeed = 0,
+                OverallSpeed = 2,
                 PauseRender = true,
                 ShowJoints = true,
                 ShowTrace = true,
@@ -94,7 +94,10 @@ namespace LineDrawer
                 new JointInfo
                 {
                     Size = x.Size / maxSize,
-                    Speed = x.Speed / 100_000f
+                    Speed = x.Speed / 100_000f,
+                    PulseEnabled = x.PulseEnabled,
+                    PulseMinCoef = x.PulseMinCoef,
+                    PulseSpeed = x.PulseSpeed
                 }).ToList();
 
             this.producer = new JointImageProducer(joints)

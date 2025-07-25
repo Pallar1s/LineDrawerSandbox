@@ -40,7 +40,16 @@
             <TextBlock FlowDirection="LeftToRight" Text="Пресеты" />
             <ComboBox Name="PresetsComboBox" DisplayMemberPath="Name" ItemsSource="{Binding Path=Presets}" SelectionChanged="PresetsComboBox_OnSelectionChanged"/>
             <TextBlock Text="Параметры узлов" />
-            <DataGrid x:Name="JointsGrid" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="false" CanUserResizeRows="false" AutoGenerateColumns="True" ItemsSource="{Binding Path=Joints,Mode=TwoWay}"/>
+            <DataGrid x:Name="JointsGrid" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="false" CanUserResizeRows="false" AutoGenerateColumns="False" ItemsSource="{Binding Path=Joints,Mode=TwoWay}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Размер" Binding="{Binding Size, Mode=TwoWay}" Width="*"/>
+                    <DataGridTextColumn Header="Скорость" Binding="{Binding Speed, Mode=TwoWay}" Width="*"/>
+                    <DataGridCheckBoxColumn Header="Вкл" Binding="{Binding Enabled, Mode=TwoWay}" Width="*"/>
+                    <DataGridCheckBoxColumn Header="Пульсация" Binding="{Binding PulseEnabled, Mode=TwoWay}" Width="*"/>
+                    <DataGridTextColumn Header="Мин. коэф." Binding="{Binding PulseMinCoef, Mode=TwoWay, StringFormat=F2}" Width="*"/>
+                    <DataGridTextColumn Header="Скор. пульсации" Binding="{Binding PulseSpeed, Mode=TwoWay, StringFormat=F2}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
             <Button x:Name="ResetButton" Click="ResetButton_OnClick" Content="Restart"/>
             
             <CheckBox FlowDirection="RightToLeft" IsChecked="{Binding Path=ShowJoints, Mode=TwoWay}">
