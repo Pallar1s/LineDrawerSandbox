@@ -5,18 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Name="NamedWindow"
-        Title="MainWindow" Height="800" Width="1000"
+        Title="LineDrawer" Height="800" Width="1000"
         xmlns:local="clr-namespace:LineDrawer"
         Closing="MainWindow_OnClosing">
     <Window.DataContext>
         <local:DrawingModel/>
     </Window.DataContext>
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="200" />
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" >
+    
+    <DockPanel>
+        <!-- Меню -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Вид">
+                <MenuItem x:Name="ParametersMenuItem" Header="Параметры" Click="ParametersMenuItem_Click"/>
+            </MenuItem>
+        </Menu>
+        
+        <!-- Основная область -->
+        <Grid>
             <Image Name="MainImage"
                    Stretch="Fill"
                    VerticalAlignment="Center" 
@@ -27,42 +32,6 @@
             <Canvas Name="MainCanvas" Background="Blue"
                     VerticalAlignment="Center" 
                     HorizontalAlignment="Center"/>
-        </Grid> 
-        
-        <StackPanel Grid.Column="1" >
-            
-            <TextBlock FlowDirection="LeftToRight" Text="Общая скорость:" />
-            <Slider 
-                    Value="{Binding Path=OverallSpeed, Mode=TwoWay}"
-                    IsSnapToTickEnabled="True" 
-                    Maximum="50" TickPlacement="BottomRight" TickFrequency="2"
-                    AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2"/>
-            <TextBlock FlowDirection="LeftToRight" Text="Пресеты" />
-            <ComboBox Name="PresetsComboBox" DisplayMemberPath="Name" ItemsSource="{Binding Path=Presets}" SelectionChanged="PresetsComboBox_OnSelectionChanged"/>
-            <TextBlock Text="Параметры узлов" />
-            <DataGrid x:Name="JointsGrid" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserSortColumns="false" CanUserResizeRows="false" AutoGenerateColumns="False" ItemsSource="{Binding Path=Joints,Mode=TwoWay}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Размер" Binding="{Binding Size, Mode=TwoWay}" Width="*"/>
-                    <DataGridTextColumn Header="Скорость" Binding="{Binding Speed, Mode=TwoWay}" Width="*"/>
-                    <DataGridCheckBoxColumn Header="Вкл" Binding="{Binding Enabled, Mode=TwoWay}" Width="*"/>
-                    <DataGridCheckBoxColumn Header="Пульсация" Binding="{Binding PulseEnabled, Mode=TwoWay}" Width="*"/>
-                    <DataGridTextColumn Header="Мин. коэф." Binding="{Binding PulseMinCoef, Mode=TwoWay, StringFormat=F2}" Width="*"/>
-                    <DataGridTextColumn Header="Скор. пульсации" Binding="{Binding PulseSpeed, Mode=TwoWay, StringFormat=F2}" Width="*"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button x:Name="ResetButton" Click="ResetButton_OnClick" Content="Restart"/>
-            
-            <CheckBox FlowDirection="RightToLeft" IsChecked="{Binding Path=ShowJoints, Mode=TwoWay}">
-                <TextBlock FlowDirection="LeftToRight" Text="Рисовать направляющие" />
-            </CheckBox>
-            
-            <CheckBox FlowDirection="RightToLeft" IsChecked="{Binding Path=ShowTrace, Mode=TwoWay}">
-                <TextBlock FlowDirection="LeftToRight" Text="Рисовать след" />
-            </CheckBox>
-            
-            <CheckBox FlowDirection="RightToLeft" IsChecked="{Binding Path=UseGradient, Mode=TwoWay}">
-                <TextBlock FlowDirection="LeftToRight" Text="Градиентные цвета" />
-            </CheckBox>
-        </StackPanel>
         </Grid>
+    </DockPanel>
 </Window>

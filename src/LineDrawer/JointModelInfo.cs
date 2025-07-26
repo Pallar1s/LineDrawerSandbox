@@ -1,6 +1,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using LineDrawer.Annotations;
+using System.Windows.Media;
 
 namespace LineDrawer
 {
@@ -12,6 +13,9 @@ namespace LineDrawer
         private bool pulseEnabled = false;
         private float pulseMinCoef = 0.5f;
         private float pulseSpeed = 1.0f;
+        private int colorR = 255;
+        private int colorG = 255;
+        private int colorB = 255;
         
         public int Size
         {
@@ -93,6 +97,63 @@ namespace LineDrawer
                 {
                     this.pulseSpeed = value;
                     this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public int ColorR
+        {
+            get => this.colorR;
+            set
+            {
+                if (this.colorR != value)
+                {
+                    this.colorR = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public int ColorG
+        {
+            get => this.colorG;
+            set
+            {
+                if (this.colorG != value)
+                {
+                    this.colorG = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public int ColorB
+        {
+            get => this.colorB;
+            set
+            {
+                if (this.colorB != value)
+                {
+                    this.colorB = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public Color JointColor
+        {
+            get => Color.FromRgb((byte)this.colorR, (byte)this.colorG, (byte)this.colorB);
+            set
+            {
+                if (this.colorR != value.R || this.colorG != value.G || this.colorB != value.B)
+                {
+                    this.colorR = value.R;
+                    this.colorG = value.G;
+                    this.colorB = value.B;
+                    this.OnPropertyChanged();
+                    this.OnPropertyChanged(nameof(ColorR));
+                    this.OnPropertyChanged(nameof(ColorG));
+                    this.OnPropertyChanged(nameof(ColorB));
                 }
             }
         }

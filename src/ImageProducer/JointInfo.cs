@@ -12,5 +12,8 @@ namespace ImageProducer
         public float PulseMinCoef { get; set; }
         public float PulseSpeed { get; set; }
         public float PulsePhase { get; set; }
+        public int ColorR { get; set; }
+        public int ColorG { get; set; }
+        public int ColorB { get; set; }
     }
 }

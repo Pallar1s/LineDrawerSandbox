@@ -74,6 +74,36 @@ namespace LineDrawer
         public Vector2[]? PreviousPositions { get; set; }
         
         public ObservableCollection<ProducerModelInfo> Presets { get; set; }
+        
+        private ProducerModelInfo currentPreset;
+        
+        public ProducerModelInfo CurrentPreset
+        {
+            get => this.currentPreset;
+            set
+            {
+                if (this.currentPreset != value)
+                {
+                    this.currentPreset = value;
+                    ResetJointsByPreset();
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        private void ResetJointsByPreset()
+        {
+            Joints.Clear();
+
+            if (this.currentPreset != null)
+            {
+                foreach (var joint in currentPreset.Joints)
+                {
+                    this.Joints.Add(joint);
+                }
+            }
+        }
+
 
         public event PropertyChangedEventHandler? PropertyChanged;
 

@@ -35,6 +35,9 @@ namespace LineDrawer
         private Matrix3x2 scaleTransform;
         private DateTime previousTime;
         private readonly DrawingModel model;
+        private ParametersWindow parametersWindow;
+        
+        public DrawingModel Model => this.model;
         
         private long producerVersion = 0;
         
@@ -60,16 +63,19 @@ namespace LineDrawer
                 PauseRender = true,
                 ShowJoints = true,
                 ShowTrace = true,
-                Presets = modelCollection 
+                Presets = modelCollection
             };
             
+            // Устанавливаем первый пресет как текущий, если есть
+            if (modelCollection.Count > 0)
+            {
+                this.model.CurrentPreset = modelCollection.First();
+            }
+            
             this.model.PropertyChanged += ModelOnPropertyChanged;
-
+            
             InitializeComponent();
             this.DataContext = this.model;
-            
-            if (modelCollection.Count > 0)
-                this.PresetsComboBox.SelectedItem = modelCollection.First();
             
             this.Reset();
             previousTime = DateTime.Now;
@@ -82,7 +88,7 @@ namespace LineDrawer
                 this.producer.Speed = this.model.OverallSpeed * 0.1f;
         }
 
-        private void Reset()
+        public void Reset()
         {
             this.model.PauseRender = true;
             this.producerVersion = DateTime.UtcNow.Ticks;
@@ -97,7 +103,10 @@ namespace LineDrawer
                     Speed = x.Speed / 100_000f,
                     PulseEnabled = x.PulseEnabled,
                     PulseMinCoef = x.PulseMinCoef,
-                    PulseSpeed = x.PulseSpeed
+                    PulseSpeed = x.PulseSpeed,
+                    ColorR = x.ColorR,
+                    ColorG = x.ColorG,
+                    ColorB = x.ColorB
                 }).ToList();
 
             this.producer = new JointImageProducer(joints)
@@ -167,11 +176,14 @@ namespace LineDrawer
 
                     if (modelJoint.Enabled)
                     {
+                        // Используем цвет конкретного сустава
+                        var jointColor = Color.FromRgb((byte)modelJoint.ColorR, (byte)modelJoint.ColorG, (byte)modelJoint.ColorB);
+                        
                         this.bitmap.DrawLineAa(
                             (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf,
                             (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf,
                             (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf,
-                            (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, drawBitmapColor, 6);
+                            (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, jointColor, 6);
                     }
 
                     i++;
@@ -233,17 +245,13 @@ namespace LineDrawer
             this.scaleTransform = Matrix3x2.CreateScale((float)this.MainImage.ActualWidth/2, (float)this.MainImage.ActualHeight/2);
         }
 
-        private void ResetButton_OnClick(object sender, RoutedEventArgs e)
+        public void OnPresetSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.Reset();
-        }
-
-        private void PresetsComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var modelInfo = this.PresetsComboBox.SelectedItem as ProducerModelInfo;
+            var modelInfo = e.AddedItems.Count > 0 ? e.AddedItems[0] as ProducerModelInfo : null;
 
             if (modelInfo != null)
             {
+                this.model.CurrentPreset = modelInfo;
                 this.model.Joints.Clear();
                 foreach (var info in modelInfo.Joints)
                 {
@@ -252,9 +260,28 @@ namespace LineDrawer
             }
         }
 
+        private void ParametersMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.parametersWindow == null)
+            {
+                this.parametersWindow = new ParametersWindow(this);
+                this.parametersWindow.Show();
+            }
+            else
+            {
+                if (!parametersWindow.IsVisible)
+                    this.parametersWindow.Show();
+                
+                this.parametersWindow.Activate();
+            }
+        }
+
         private void MainWindow_OnClosing(object? sender, CancelEventArgs e)
         {
             this.model.Halt = true;
+            
+            if (parametersWindow != null)
+                parametersWindow.Close();
         }
     }
 }
