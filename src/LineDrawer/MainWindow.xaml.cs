@@ -270,11 +270,7 @@ namespace LineDrawer
             if (modelInfo != null)
             {
                 this.model.CurrentPreset = modelInfo;
-                this.model.Joints.Clear();
-                foreach (var info in modelInfo.Joints)
-                {
-                    this.model.Joints.Add(info);
-                }
+                this.Reset();
             }
         }
 

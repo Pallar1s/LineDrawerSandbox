@@ -126,5 +126,26 @@ namespace LineDrawer
             e.Cancel = true;
             this.Hide();
         }
+
+        private void AddPresetButton_Click(object sender, RoutedEventArgs e)
+        {
+            var newModel = ProducerModelInfo.CreateNew();
+            mainWindow.Model.Presets.Add(newModel);
+            
+            PresetsComboBox.SelectedItem = newModel;
+        }
+
+        private void RemovePresetButton_Click(object sender, RoutedEventArgs e)
+        {
+            var modelInfo = PresetsComboBox.SelectedItem as ProducerModelInfo;
+            
+            if (modelInfo == null)
+                return;
+            
+            mainWindow.Model.Presets.Remove(modelInfo);
+            
+            if (mainWindow.Model.Presets.Count > 0)
+                PresetsComboBox.SelectedItem = mainWindow.Model.Presets.First();
+        }
     }
 } 
