@@ -63,7 +63,11 @@ namespace LineDrawer
                 PauseRender = true,
                 ShowJoints = true,
                 ShowTrace = true,
-                Presets = modelCollection
+                Presets = modelCollection,
+                EnableAntialiasing = true,
+                AntialiasingLevel = 3,
+                EnableSmoothing = true,
+                SmoothingLevel = 5
             };
             
             // Устанавливаем первый пресет как текущий, если есть
@@ -116,6 +120,7 @@ namespace LineDrawer
             
             this.traceQueue.Clear();
             this.bitmap.Clear();
+            AdvancedLineDrawing.ClearCache(); // Очищаем кэш при сбросе
             this.model.PauseRender = false;
         }
 
@@ -179,11 +184,23 @@ namespace LineDrawer
                         // Используем цвет конкретного сустава
                         var jointColor = Color.FromRgb((byte)modelJoint.ColorR, (byte)modelJoint.ColorG, (byte)modelJoint.ColorB);
                         
-                        this.bitmap.DrawLineAa(
-                            (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf,
-                            (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf,
-                            (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf,
-                            (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf, jointColor, 6);
+                        var x1 = (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf;
+                        var y1 = (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf;
+                        var x2 = (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf;
+                        var y2 = (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf;
+                        
+                        // Используем улучшенную отрисовку линий
+                        if (this.model.EnableAntialiasing || this.model.EnableSmoothing)
+                        {
+                            this.bitmap.DrawAdvancedLine(x1, y1, x2, y2, jointColor, 6, 
+                                this.model.EnableAntialiasing ? this.model.AntialiasingLevel : 1,
+                                this.model.EnableSmoothing ? this.model.SmoothingLevel : 1);
+                        }
+                        else
+                        {
+                            // Стандартная отрисовка
+                            this.bitmap.DrawLineAa(x1, y1, x2, y2, jointColor, 6);
+                        }
                     }
 
                     i++;
@@ -209,7 +226,8 @@ namespace LineDrawer
                     if (this.model.ShowJoints)
                     {
                         this.MainCanvas.DrawCircle(newX, newY, 10, 10, new Color { R = 255, A = 255 });
-                        this.MainCanvas.DrawLine(prevX, prevY, newX, newY, color: Color.FromRgb(0, 255, 0));
+                        this.MainCanvas.DrawSmoothLine(prevX, prevY, newX, newY, Color.FromRgb(0, 255, 0), 
+                            3, this.model.EnableAntialiasing);
                     }
 
                     prevX = newX;

@@ -20,6 +20,23 @@
             </MenuItem>
         </Menu>
         
+        <!-- Панель инструментов -->
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar>
+                <CheckBox Content="Антиалиасинг" IsChecked="{Binding Path=EnableAntialiasing, Mode=TwoWay}" Margin="5,0"/>
+                <CheckBox Content="Сглаживание" IsChecked="{Binding Path=EnableSmoothing, Mode=TwoWay}" Margin="5,0"/>
+                <Separator/>
+                <TextBlock Text="АА:" VerticalAlignment="Center" Margin="5,0,2,0"/>
+                <Slider Value="{Binding Path=AntialiasingLevel, Mode=TwoWay}" 
+                        Minimum="1" Maximum="5" Width="60" 
+                        IsEnabled="{Binding Path=EnableAntialiasing}"/>
+                <TextBlock Text="Сгл:" VerticalAlignment="Center" Margin="10,0,2,0"/>
+                <Slider Value="{Binding Path=SmoothingLevel, Mode=TwoWay}" 
+                        Minimum="1" Maximum="10" Width="60" 
+                        IsEnabled="{Binding Path=EnableSmoothing}"/>
+            </ToolBar>
+        </ToolBarTray>
+        
         <!-- Основная область -->
         <Grid>
             <Image Name="MainImage"

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Numerics;
@@ -12,6 +13,10 @@ namespace LineDrawer
         private bool showTrace;
         private int overallSpeed;
         private bool useGradient;
+        private bool enableAntialiasing;
+        private int antialiasingLevel;
+        private bool enableSmoothing;
+        private int smoothingLevel;
         
         public ObservableCollection<JointModelInfo> Joints { get; set; }
         
@@ -62,6 +67,58 @@ namespace LineDrawer
                 if (this.useGradient != value)
                 {
                     this.useGradient = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public bool EnableAntialiasing
+        {
+            get => this.enableAntialiasing;
+            set
+            {
+                if (this.enableAntialiasing != value)
+                {
+                    this.enableAntialiasing = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public int AntialiasingLevel
+        {
+            get => this.antialiasingLevel;
+            set
+            {
+                if (this.antialiasingLevel != value)
+                {
+                    this.antialiasingLevel = Math.Max(1, Math.Min(5, value)); // Ограничиваем от 1 до 5
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public bool EnableSmoothing
+        {
+            get => this.enableSmoothing;
+            set
+            {
+                if (this.enableSmoothing != value)
+                {
+                    this.enableSmoothing = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public int SmoothingLevel
+        {
+            get => this.smoothingLevel;
+            set
+            {
+                if (this.smoothingLevel != value)
+                {
+                    this.smoothingLevel = Math.Max(1, Math.Min(10, value)); // Ограничиваем от 1 до 10
                     this.OnPropertyChanged();
                 }
             }

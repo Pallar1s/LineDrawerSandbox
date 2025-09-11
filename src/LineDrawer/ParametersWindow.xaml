@@ -24,6 +24,42 @@
                     Maximum="50" TickPlacement="BottomRight" TickFrequency="2"
                     AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2"/>
             
+            <!-- Настройки отрисовки -->
+            <GroupBox Header="Настройки отрисовки" Margin="0,10,0,10">
+                <StackPanel Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Антиалиасинг -->
+                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                            <CheckBox Content="Включить антиалиасинг" IsChecked="{Binding Path=EnableAntialiasing, Mode=TwoWay}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Уровень антиалиасинга:" FontSize="12"/>
+                            <Slider 
+                                Value="{Binding Path=AntialiasingLevel, Mode=TwoWay}"
+                                IsSnapToTickEnabled="True" 
+                                Minimum="1" Maximum="5" TickPlacement="BottomRight" TickFrequency="1"
+                                AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="0"
+                                IsEnabled="{Binding Path=EnableAntialiasing}"/>
+                        </StackPanel>
+                        
+                        <!-- Сглаживание -->
+                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                            <CheckBox Content="Включить сглаживание" IsChecked="{Binding Path=EnableSmoothing, Mode=TwoWay}" Margin="0,0,0,5"/>
+                            <TextBlock Text="Уровень сглаживания:" FontSize="12"/>
+                            <Slider 
+                                Value="{Binding Path=SmoothingLevel, Mode=TwoWay}"
+                                IsSnapToTickEnabled="True" 
+                                Minimum="1" Maximum="10" TickPlacement="BottomRight" TickFrequency="1"
+                                AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="0"
+                                IsEnabled="{Binding Path=EnableSmoothing}"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+            
             <TextBlock Text="Пресеты" FontWeight="Bold" Margin="0,10,0,5"/>
             <Grid>
                 <Grid.ColumnDefinitions>
