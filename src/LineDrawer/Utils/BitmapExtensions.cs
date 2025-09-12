@@ -22,26 +22,29 @@ namespace LineDrawer
             var width = bitmap.PixelWidth;
             var height = bitmap.PixelHeight;
             var stride = bitmap.BackBufferStride;
-            var byteCount = stride * height;
 
-            var buffer = new byte[byteCount];
+            // Коэффициент затухания (умножение каналов)
+            var k = 1.0 - clamped;
 
             bitmap.Lock();
             try
             {
-                Marshal.Copy(bitmap.BackBuffer, buffer, 0, byteCount);
-
-                // Bgr32: 4 байта на пиксель: B, G, R, X
-                for (int i = 0; i < byteCount; i += 4)
+                unsafe
                 {
-                    // Смешиваем к чёрному (0): new = old * (1 - clamped)
-                    buffer[i + 0] = (byte)(buffer[i + 0] * (1.0 - clamped)); // B
-                    buffer[i + 1] = (byte)(buffer[i + 1] * (1.0 - clamped)); // G
-                    buffer[i + 2] = (byte)(buffer[i + 2] * (1.0 - clamped)); // R
-                    // buffer[i + 3] не используется в Bgr32
+                    byte* basePtr = (byte*)bitmap.BackBuffer.ToPointer();
+                    for (int y = 0; y < height; y++)
+                    {
+                        byte* row = basePtr + y * stride;
+                        for (int x = 0; x < width; x++)
+                        {
+                            int idx = x * 4;
+                            row[idx + 0] = (byte)(row[idx + 0] * k); // B
+                            row[idx + 1] = (byte)(row[idx + 1] * k); // G
+                            row[idx + 2] = (byte)(row[idx + 2] * k); // R
+                        }
+                    }
                 }
 
-                Marshal.Copy(buffer, 0, bitmap.BackBuffer, byteCount);
                 bitmap.AddDirtyRect(new System.Windows.Int32Rect(0, 0, width, height));
             }
             finally
