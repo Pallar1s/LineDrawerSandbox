@@ -74,8 +74,8 @@ namespace LineDrawer
                 UseGradient = false,
                 LineThickness = 6,
                 EnableFading = false,
-                FadeSpeed = 0.02,
-                FadeGridStep = 1
+                FadeSpeed = 0.4,
+                FadeGridStep = 3
             };
             
             // Устанавливаем первый пресет как текущий, если есть
