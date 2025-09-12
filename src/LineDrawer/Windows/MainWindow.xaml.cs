@@ -34,6 +34,8 @@ namespace LineDrawer
 
         private Matrix3x2 scaleTransform;
         private DateTime previousTime;
+        private double lastDeltaSeconds;
+        private double fadeInterval;
         private readonly DrawingModel model;
         private ParametersWindow parametersWindow;
         
@@ -69,7 +71,9 @@ namespace LineDrawer
                 EnableSmoothing = true,
                 SmoothingLevel = 5,
                 UseGradient = false,
-                LineThickness = 6
+                LineThickness = 6,
+                EnableFading = false,
+                FadeSpeed = 0.02
             };
             
             // Устанавливаем первый пресет как текущий, если есть
@@ -142,9 +146,11 @@ namespace LineDrawer
 
                 var currentVersion = this.producerVersion;
                 var currentTime = DateTime.Now;
+                var dt = currentTime - this.previousTime;
+                this.lastDeltaSeconds = dt.TotalSeconds;
                 if (!this.model.PauseRender && currentVersion == this.producerVersion)
                 {
-                    var positions = this.producer.Tick(currentTime - previousTime).ToArray();
+                    var positions = this.producer.Tick(dt).ToArray();
 
                     this.Dispatcher.Invoke(() =>
                     {
@@ -166,6 +172,22 @@ namespace LineDrawer
 
         private void DrawModel(Vector2[] positions)
         {
+            // Плавное затухание текущего содержимого битмапа (времязависимое и мягкое при малых значениях)
+            if (this.model is { EnableFading: true, FadeSpeed: > 0 })
+            {
+                var needFade = this.fadeInterval >= (1.0 - 1.0 * this.model.FadeSpeed);
+
+                if (needFade)
+                {
+                    this.bitmap.Fade(0.05);
+                    this.fadeInterval = 0;
+                }
+                else
+                {
+                    this.fadeInterval += this.lastDeltaSeconds;
+                }
+            }
+
             var drawTraceColor = this.model.Joints.LastOrDefault()?.JointColor ?? this.defaultTraceColor;
             var drawBitmapColor = this.defaultBitmapColor;
 

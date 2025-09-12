@@ -56,6 +56,16 @@
                         <CheckBox Content="Градиентный след" IsChecked="{Binding Path=UseGradient, Mode=TwoWay}"/>
                         
                     </StackPanel>
+                    <!-- Затухание -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <CheckBox Content="Включить затухание" IsChecked="{Binding Path=EnableFading, Mode=TwoWay}" Margin="0,0,10,0"/>
+                        <TextBlock Text="Скорость затухания:" Margin="0,0,10,0"/>
+                        <Slider Width="200"
+                                Value="{Binding Path=FadeSpeed, Mode=TwoWay}"
+                                Minimum="0" Maximum="1" TickPlacement="BottomRight" TickFrequency="0.05"
+                                AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2"
+                                IsEnabled="{Binding Path=EnableFading}"/>
+                    </StackPanel>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>

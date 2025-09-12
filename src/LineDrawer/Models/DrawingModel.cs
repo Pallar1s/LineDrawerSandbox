@@ -19,6 +19,8 @@ namespace LineDrawer
         private bool enableSmoothing;
         private int smoothingLevel;
         private int lineThickness;
+        private bool enableFading;
+        private double fadeSpeed;
         
         public ObservableCollection<JointModelInfo> Joints { get; set; }
         
@@ -140,6 +142,34 @@ namespace LineDrawer
             }
         }
 
+        public bool EnableFading
+        {
+            get => this.enableFading;
+            set
+            {
+                if (this.enableFading != value)
+                {
+                    this.enableFading = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        // 0.0 - без затухания, 1.0 - очень быстрое затухание (на кадр)
+        public double FadeSpeed
+        {
+            get => this.fadeSpeed;
+            set
+            {
+                var clamped = Math.Max(0.0, Math.Min(1.0, value));
+                if (Math.Abs(this.fadeSpeed - clamped) > double.Epsilon)
+                {
+                    this.fadeSpeed = clamped;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+        
         public bool PauseRender { get; set; }
         
         public bool Halt { get; set; }
@@ -170,12 +200,12 @@ namespace LineDrawer
                 }
             }
         }
-
+        
         private void JointsOnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
             ResetJointsByPreset();
         }
-
+        
         private void ResetJointsByPreset()
         {
             Joints.Clear();

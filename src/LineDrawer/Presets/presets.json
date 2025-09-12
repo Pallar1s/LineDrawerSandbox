@@ -1460,5 +1460,364 @@
         "JointColor": "#FFBA7800"
       }
     ]
+  },
+  {
+    "Name": "Happy new year",
+    "Joints": [
+      {
+        "Size": 355,
+        "Speed": -14000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 192,
+        "ColorG": 47,
+        "ColorB": 38,
+        "JointColor": "#FFC02F26"
+      },
+      {
+        "Size": 35,
+        "Speed": 4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 153,
+        "ColorG": 243,
+        "ColorB": 162,
+        "JointColor": "#FF99F3A2"
+      },
+      {
+        "Size": 415,
+        "Speed": 11000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 206,
+        "ColorG": 21,
+        "ColorB": 63,
+        "JointColor": "#FFCE153F"
+      },
+      {
+        "Size": 405,
+        "Speed": 11000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 29,
+        "ColorG": 202,
+        "ColorB": 116,
+        "JointColor": "#FF1DCA74"
+      },
+      {
+        "Size": 15,
+        "Speed": 13000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 73,
+        "ColorG": 238,
+        "ColorB": 160,
+        "JointColor": "#FF49EEA0"
+      }
+    ]
+  },
+  {
+    "Name": "Atomic duet",
+    "Joints": [
+      {
+        "Size": 110,
+        "Speed": -8000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 62,
+        "ColorG": 90,
+        "ColorB": 53,
+        "JointColor": "#FF3E5A35"
+      },
+      {
+        "Size": 135,
+        "Speed": 18000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 250,
+        "Speed": -10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      }
+    ]
+  },
+  {
+    "Name": "Cloud connected",
+    "Joints": [
+      {
+        "Size": 55,
+        "Speed": -17000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 85,
+        "ColorG": 9,
+        "ColorB": 20,
+        "JointColor": "#FF550914"
+      },
+      {
+        "Size": 35,
+        "Speed": 3000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 73,
+        "ColorG": 187,
+        "ColorB": 14,
+        "JointColor": "#FF49BB0E"
+      },
+      {
+        "Size": 330,
+        "Speed": 13000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 249,
+        "JointColor": "#FF00FFF9"
+      }
+    ]
+  },
+  {
+    "Name": "Nirvana baby",
+    "Joints": [
+      {
+        "Size": 375,
+        "Speed": -2000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 29,
+        "ColorG": 193,
+        "ColorB": 41,
+        "JointColor": "#FF1DC129"
+      },
+      {
+        "Size": 280,
+        "Speed": 4000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 47,
+        "ColorG": 130,
+        "ColorB": 96,
+        "JointColor": "#FF2F8260"
+      },
+      {
+        "Size": 360,
+        "Speed": 6000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 111,
+        "ColorG": 9,
+        "ColorB": 188,
+        "JointColor": "#FF6F09BC"
+      },
+      {
+        "Size": 180,
+        "Speed": -19000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 51,
+        "ColorG": 18,
+        "ColorB": 1,
+        "JointColor": "#FF331201"
+      }
+    ]
+  },
+  {
+    "Name": "Pearl",
+    "Joints": [
+      {
+        "Size": 215,
+        "Speed": 17000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FFFFFFFF"
+      },
+      {
+        "Size": 295,
+        "Speed": -19000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 28,
+        "ColorG": 138,
+        "ColorB": 151,
+        "JointColor": "#FF1C8A97"
+      },
+      {
+        "Size": 380,
+        "Speed": -19000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 87,
+        "ColorG": 58,
+        "ColorB": 76,
+        "JointColor": "#FF573A4C"
+      },
+      {
+        "Size": 260,
+        "Speed": 3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 30,
+        "ColorG": 239,
+        "ColorB": 192,
+        "JointColor": "#FF1EEFC0"
+      }
+    ]
+  },
+  {
+    "Name": "Elephant",
+    "Joints": [
+      {
+        "Size": 40,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 1,
+        "ColorG": 148,
+        "ColorB": 57,
+        "JointColor": "#FF019439"
+      },
+      {
+        "Size": 355,
+        "Speed": -4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 140,
+        "ColorG": 21,
+        "ColorB": 97,
+        "JointColor": "#FF8C1561"
+      },
+      {
+        "Size": 115,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 25,
+        "ColorG": 92,
+        "ColorB": 179,
+        "JointColor": "#FF195CB3"
+      },
+      {
+        "Size": 475,
+        "Speed": -5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 79,
+        "ColorG": 96,
+        "ColorB": 166,
+        "JointColor": "#FF4F60A6"
+      }
+    ]
+  },
+  {
+    "Name": "Trajectory",
+    "Joints": [
+      {
+        "Size": 90,
+        "Speed": -8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 58,
+        "ColorG": 209,
+        "ColorB": 201,
+        "JointColor": "#FF3AD1C9"
+      },
+      {
+        "Size": 5,
+        "Speed": -9000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 122,
+        "ColorG": 7,
+        "ColorB": 5,
+        "JointColor": "#FF7A0705"
+      },
+      {
+        "Size": 20,
+        "Speed": 17000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 28,
+        "ColorG": 40,
+        "ColorB": 138,
+        "JointColor": "#FF1C288A"
+      },
+      {
+        "Size": 370,
+        "Speed": 6000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 218,
+        "ColorG": 33,
+        "ColorB": 218,
+        "JointColor": "#FFDA21DA"
+      }
+    ]
   }
 ]
