@@ -21,6 +21,7 @@ namespace LineDrawer
         private int lineThickness;
         private bool enableFading;
         private double fadeSpeed;
+        private int fadeGridStep;
         
         public ObservableCollection<JointModelInfo> Joints { get; set; }
         
@@ -165,6 +166,21 @@ namespace LineDrawer
                 if (Math.Abs(this.fadeSpeed - clamped) > double.Epsilon)
                 {
                     this.fadeSpeed = clamped;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        // Шаг сетки для выборочного затухания (1 — каждый пиксель)
+        public int FadeGridStep
+        {
+            get => this.fadeGridStep;
+            set
+            {
+                var clamped = Math.Max(1, Math.Min(32, value));
+                if (this.fadeGridStep != clamped)
+                {
+                    this.fadeGridStep = clamped;
                     this.OnPropertyChanged();
                 }
             }

@@ -65,6 +65,12 @@
                                 Minimum="0" Maximum="1" TickPlacement="BottomRight" TickFrequency="0.05"
                                 AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="2"
                                 IsEnabled="{Binding Path=EnableFading}"/>
+                        <TextBlock Text="Шаг сетки:" Margin="10,0,10,0"/>
+                        <Slider Width="150"
+                                Value="{Binding Path=FadeGridStep, Mode=TwoWay}"
+                                Minimum="1" Maximum="32" TickFrequency="1" IsSnapToTickEnabled="True"
+                                AutoToolTipPlacement="BottomRight" AutoToolTipPrecision="0"
+                                IsEnabled="{Binding Path=EnableFading}"/>
                     </StackPanel>
                     <Grid>
                         <Grid.ColumnDefinitions>

@@ -26,7 +26,6 @@ namespace LineDrawer
         private const int BitmapSize = 2048;
         private const int BitmapSizeHalf = BitmapSize / 2;
         private double colorIteration = 0.0d;
-        private Color defaultBitmapColor = Colors.White;
         private Color defaultTraceColor = Colors.Red;
         
         private WriteableBitmap bitmap = new WriteableBitmap(BitmapSize, BitmapSize, 96, 96, PixelFormats.Bgr32, null);
@@ -36,6 +35,8 @@ namespace LineDrawer
         private DateTime previousTime;
         private double lastDeltaSeconds;
         private double fadeInterval;
+        private int fadePhaseX;
+        private int fadePhaseY;
         private readonly DrawingModel model;
         private ParametersWindow parametersWindow;
         
@@ -73,7 +74,8 @@ namespace LineDrawer
                 UseGradient = false,
                 LineThickness = 6,
                 EnableFading = false,
-                FadeSpeed = 0.02
+                FadeSpeed = 0.02,
+                FadeGridStep = 1
             };
             
             // Устанавливаем первый пресет как текущий, если есть
@@ -135,6 +137,8 @@ namespace LineDrawer
             this.bitmap.Clear();
             AdvancedLineDrawing.ClearCache(); // Очищаем кэш при сбросе
             this.model.PauseRender = false;
+            this.fadePhaseX = 0;
+            this.fadePhaseY = 0;
         }
 
         private async Task Run()
@@ -172,24 +176,11 @@ namespace LineDrawer
 
         private void DrawModel(Vector2[] positions)
         {
-            // Плавное затухание текущего содержимого битмапа (времязависимое и мягкое при малых значениях)
+            // Плавное затухание текущего содержимого битмапа (с интервалом и сеткой)
             if (this.model is { EnableFading: true, FadeSpeed: > 0 })
-            {
-                var needFade = this.fadeInterval >= (1.0 - 1.0 * this.model.FadeSpeed);
-
-                if (needFade)
-                {
-                    this.bitmap.Fade(0.05);
-                    this.fadeInterval = 0;
-                }
-                else
-                {
-                    this.fadeInterval += this.lastDeltaSeconds;
-                }
-            }
-
+                this.FadeImage();
+            
             var drawTraceColor = this.model.Joints.LastOrDefault()?.JointColor ?? this.defaultTraceColor;
-            var drawBitmapColor = this.defaultBitmapColor;
 
             if (this.model.UseGradient)
             {
@@ -200,91 +191,117 @@ namespace LineDrawer
                     this.colorIteration = 0;
 
                 drawTraceColor = gradientColor;
-                drawBitmapColor = gradientColor;
             }
 
+            //Основная отрисовка
             if (this.model.PreviousPositions != null)
-            {
-                var i = 0;
-                foreach (var pos in this.model.PreviousPositions)
-                {
-                    var modelJoint = this.model.Joints[i];
-
-                    if (modelJoint.Enabled)
-                    {
-                        // Используем цвет конкретного сустава
-                        var jointColor = Color.FromRgb((byte)modelJoint.ColorR, (byte)modelJoint.ColorG, (byte)modelJoint.ColorB);
-                        
-                        var x1 = (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf;
-                        var y1 = (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf;
-                        var x2 = (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf;
-                        var y2 = (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf;
-                        
-                        // Используем улучшенную отрисовку линий
-                        if (this.model.EnableAntialiasing || this.model.EnableSmoothing)
-                        {
-                            this.bitmap.DrawAdvancedLine(x1, y1, x2, y2, jointColor, this.model.LineThickness, 
-                                this.model.EnableAntialiasing ? this.model.AntialiasingLevel : 1,
-                                this.model.EnableSmoothing ? this.model.SmoothingLevel : 1);
-                        }
-                        else
-                        {
-                            // Стандартная отрисовка
-                            this.bitmap.DrawLineAa(x1, y1, x2, y2, jointColor, this.model.LineThickness);
-                        }
-                    }
-
-                    i++;
-                }
-            }
+                DrawNewStep(positions);
 
             this.MainImage.Source = this.bitmap;
             this.MainCanvas.Children.Clear();
 
-            var prevX = 0;
-            var prevY = 0;
-
-            Vector2 lastPos = default;
-
             if (this.model.ShowJoints || this.model.ShowTrace)
             {
-                foreach (var pos in positions)
+                DrawJointsAndTrace(positions, drawTraceColor);
+            }
+        }
+        
+        private void FadeImage()
+        {
+            var needFade = this.fadeInterval >= (0.1 - 0.1 * this.model.FadeSpeed);
+
+            if (needFade)
+            {
+                var step = Math.Max(1, this.model.FadeGridStep);
+                this.bitmap.Fade(0.05, step, this.fadePhaseX, this.fadePhaseY);
+                // сдвигаем фазу, чтобы постепенно покрыть всю сетку
+                this.fadePhaseX = (this.fadePhaseX + 1) % step;
+                if (this.fadePhaseX == 0)
+                    this.fadePhaseY = (this.fadePhaseY + 1) % step;
+                this.fadeInterval = 0;
+            }
+            else
+            {
+                this.fadeInterval += this.lastDeltaSeconds;
+            }
+        }
+
+        private void DrawNewStep(Vector2[] positions)
+        {
+            var i = 0;
+            foreach (var pos in this.model.PreviousPositions)
+            {
+                var modelJoint = this.model.Joints[i];
+
+                if (modelJoint.Enabled)
                 {
-                    var vector = Vector2.Transform(pos, this.scaleTransform);
-                    var newX = (int)vector.X;
-                    var newY = (int)vector.Y;
-
-                    if (this.model.ShowJoints)
+                    // Используем цвет конкретного сустава
+                    var jointColor = Color.FromRgb((byte)modelJoint.ColorR, (byte)modelJoint.ColorG, (byte)modelJoint.ColorB);
+                        
+                    var x1 = (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf;
+                    var y1 = (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf;
+                    var x2 = (int)(positions[i].X * BitmapSizeHalf) + BitmapSizeHalf;
+                    var y2 = (int)(positions[i].Y * BitmapSizeHalf) + BitmapSizeHalf;
+                        
+                    // Используем улучшенную отрисовку линий
+                    if (this.model.EnableAntialiasing || this.model.EnableSmoothing)
                     {
-                        this.MainCanvas.DrawCircle(newX, newY, 10, 10, new Color { R = 255, A = 255 });
-                        this.MainCanvas.DrawSmoothLine(prevX, prevY, newX, newY, Color.FromRgb(0, 255, 0), 
-                            3, this.model.EnableAntialiasing);
+                        this.bitmap.DrawAdvancedLine(x1, y1, x2, y2, jointColor, this.model.LineThickness, 
+                            this.model.EnableAntialiasing ? this.model.AntialiasingLevel : 1,
+                            this.model.EnableSmoothing ? this.model.SmoothingLevel : 1);
                     }
-
-                    prevX = newX;
-                    prevY = newY;
-                    lastPos = pos;
+                    else
+                    {
+                        // Стандартная отрисовка
+                        this.bitmap.DrawLineAa(x1, y1, x2, y2, jointColor, this.model.LineThickness);
+                    }
                 }
 
-                this.traceQueue.Enqueue(lastPos);
+                i++;
+            }
+        }
 
-                if (this.traceQueue.Count > TraceLength)
-                    this.traceQueue.Dequeue();
+        private void DrawJointsAndTrace(Vector2[] positions, Color drawTraceColor)
+        {
+            Vector2 lastPos = default;
+            var prevX = 0;
+            var prevY = 0;
+            foreach (var pos in positions)
+            {
+                var vector = Vector2.Transform(pos, this.scaleTransform);
+                var newX = (int)vector.X;
+                var newY = (int)vector.Y;
 
-                if (this.model.ShowTrace)
+                if (this.model.ShowJoints)
                 {
-                    var i = 0;
-                    var traceColor = drawTraceColor;
-                    foreach (var item in this.traceQueue)
-                    {
-                        double opacity = i / (double)TraceLength;
-                        var vector = Vector2.Transform(item, this.scaleTransform);
-                        var newX = (int)vector.X;
-                        var newY = (int)vector.Y;
-                        traceColor.A = (byte)(opacity * 255);
-                        this.MainCanvas.DrawCircle(newX, newY, (int)(20 * opacity), (int)(20 * opacity), traceColor);
-                        i++;
-                    }
+                    this.MainCanvas.DrawCircle(newX, newY, 10, 10, new Color { R = 255, A = 255 });
+                    this.MainCanvas.DrawSmoothLine(prevX, prevY, newX, newY, Color.FromRgb(0, 255, 0), 
+                        3, this.model.EnableAntialiasing);
+                }
+
+                prevX = newX;
+                prevY = newY;
+                lastPos = pos;
+            }
+
+            this.traceQueue.Enqueue(lastPos);
+
+            if (this.traceQueue.Count > TraceLength)
+                this.traceQueue.Dequeue();
+
+            if (this.model.ShowTrace)
+            {
+                var i = 0;
+                var traceColor = drawTraceColor;
+                foreach (var item in this.traceQueue)
+                {
+                    double opacity = i / (double)TraceLength;
+                    var vector = Vector2.Transform(item, this.scaleTransform);
+                    var newX = (int)vector.X;
+                    var newY = (int)vector.Y;
+                    traceColor.A = (byte)(opacity * 255);
+                    this.MainCanvas.DrawCircle(newX, newY, (int)(20 * opacity), (int)(20 * opacity), traceColor);
+                    i++;
                 }
             }
         }
