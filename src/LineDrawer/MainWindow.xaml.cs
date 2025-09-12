@@ -77,6 +77,7 @@ namespace LineDrawer
             }
             
             this.model.PropertyChanged += ModelOnPropertyChanged;
+            this.model.ModelReset += ModelOnModelReset;
             
             InitializeComponent();
             this.DataContext = this.model;
@@ -84,6 +85,11 @@ namespace LineDrawer
             this.Reset();
             previousTime = DateTime.Now;
             Task.Run(this.Run);
+        }
+
+        private void ModelOnModelReset(object? sender, EventArgs e)
+        {
+            this.Reset();
         }
 
         private void ModelOnPropertyChanged(object? sender, PropertyChangedEventArgs e)
@@ -95,6 +101,7 @@ namespace LineDrawer
         public void Reset()
         {
             this.model.PauseRender = true;
+            
             this.producerVersion = DateTime.UtcNow.Ticks;
             this.model.PreviousPositions = null;
             
@@ -267,7 +274,7 @@ namespace LineDrawer
         {
             var modelInfo = e.AddedItems.Count > 0 ? e.AddedItems[0] as ProducerModelInfo : null;
 
-            if (modelInfo != null)
+            if (modelInfo != null && modelInfo != this.model.CurrentPreset)
             {
                 this.model.CurrentPreset = modelInfo;
                 this.Reset();

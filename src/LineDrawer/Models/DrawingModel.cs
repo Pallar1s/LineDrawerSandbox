@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Numerics;
 using System.Runtime.CompilerServices;
@@ -141,11 +142,22 @@ namespace LineDrawer
             {
                 if (this.currentPreset != value)
                 {
+                    if (this.currentPreset?.Joints != null)
+                    {
+                        this.currentPreset.Joints.CollectionChanged -= JointsOnCollectionChanged;
+                    }
+
                     this.currentPreset = value;
+                    this.currentPreset.Joints.CollectionChanged += JointsOnCollectionChanged;
                     ResetJointsByPreset();
                     this.OnPropertyChanged();
                 }
             }
+        }
+
+        private void JointsOnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+        {
+            ResetJointsByPreset();
         }
 
         private void ResetJointsByPreset()
@@ -159,9 +171,12 @@ namespace LineDrawer
                     this.Joints.Add(joint);
                 }
             }
+            
+            this.ModelReset?.Invoke(this, EventArgs.Empty);
         }
 
 
+        public event EventHandler? ModelReset;
         public event PropertyChangedEventHandler? PropertyChanged;
 
         [NotifyPropertyChangedInvocator]

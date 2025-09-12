@@ -5,7 +5,6 @@ using System.Windows.Controls;
 using Microsoft.Win32;
 using System.IO;
 using Newtonsoft.Json;
-using System.Linq;
 
 namespace LineDrawer
 {
@@ -146,6 +145,17 @@ namespace LineDrawer
             
             if (mainWindow.Model.Presets.Count > 0)
                 PresetsComboBox.SelectedItem = mainWindow.Model.Presets.First();
+        }
+
+        private void RandomizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.mainWindow.Model.CurrentPreset != null)
+            {
+                var model = this.mainWindow.Model.CurrentPreset;
+                model.Randomize();
+                this.mainWindow.Model.CurrentPreset = null;
+                this.mainWindow.Model.CurrentPreset = model;
+            }
         }
     }
 } 

@@ -1,25 +1,1464 @@
 [
-  {"Name":"Mr Pi","Joints":[{"Size":100,"Speed":10000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":100,"Speed":31415,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0}]},
-  {"Name":"Simple-dimple","Joints":[{"Size":10,"Speed":1110,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":100,"Speed":100,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":255},{"Size":90,"Speed":3330,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255}]},
-  {"Name":"Porky","Joints":[{"Size":100,"Speed":3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":165,"ColorB":0},{"Size":90,"Speed":2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":128,"ColorG":0,"ColorB":128}]},
-  {"Name":"Flower","Joints":[{"Size":100,"Speed":3200,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":20,"ColorB":147},{"Size":90,"Speed":2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":127}]},
-  {"Name":"Flower longer","Joints":[{"Size":100,"Speed":3200,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":20,"ColorB":147},{"Size":90,"Speed":1100,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":127}]},
-  {"Name":"Triada","Joints":[{"Size":5,"Speed":10000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":150,"Speed":10,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":90,"Speed":30000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255}]},
-  {"Name":"Grannies' Pie","Joints":[{"Size":22,"Speed":1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":215,"ColorB":0},{"Size":150,"Speed":1,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":69,"ColorB":0},{"Size":90,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":20,"ColorB":147},{"Size":40,"Speed":1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":255}]},
-  {"Name":"Diabotical","Joints":[{"Size":22,"Speed":1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":150,"Speed":1,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":90,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":60,"Speed":-20000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0}]},
-  {"Name":"Pie revert","Joints":[{"Size":22,"Speed":1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":150,"Speed":1,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":90,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":60,"Speed":-20000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0}]},
-  {"Name":"Medal","Joints":[{"Size":60,"Speed":-1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":215,"ColorB":0},{"Size":300,"Speed":3,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":192,"ColorG":192,"ColorB":192},{"Size":90,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":184,"ColorG":115,"ColorB":51},{"Size":200,"Speed":-20000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":215,"ColorB":0},{"Size":100,"Speed":10000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":192,"ColorG":192,"ColorB":192}]},
-  {"Name":"Krishna","Joints":[{"Size":60,"Speed":-8000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":90,"Speed":-5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":100,"Speed":-2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":100,"Speed":1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255}]},
-  {"Name":"Love story","Joints":[{"Size":70,"Speed":-8000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":20,"ColorB":147},{"Size":330,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":105,"ColorB":180},{"Size":100,"Speed":2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":182,"ColorB":193},{"Size":120,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":20,"ColorB":147},{"Size":90,"Speed":1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":105,"ColorB":180}]},
-  {"Name":"Mickey Mouse","Joints":[{"Size":20,"Speed":-1000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":3,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":120,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":100,"Speed":-20000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":100,"Speed":10000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0}]},
-  {"Name":"Cross","Joints":[{"Size":20,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":-5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":120,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":100,"Speed":-20000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":100,"Speed":10000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255}]},
-  {"Name":"Hush","Joints":[{"Size":20,"Speed":8000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":-8000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":120,"Speed":-4000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":100,"Speed":4000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":100,"Speed":4000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255},{"Size":100,"Speed":-4000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":255}]},
-  {"Name":"Shuriken","Joints":[{"Size":20,"Speed":7000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":-5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":165,"ColorB":0},{"Size":120,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":100,"Speed":-20000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":100,"Speed":10000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255}]},
-  {"Name":"Inception","Joints":[{"Size":70,"Speed":2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":150,"Speed":3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":40,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":70,"Speed":-9000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255}]},
-  {"Name":"Vaze","Joints":[{"Size":70,"Speed":2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":150,"Speed":3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":40,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":70,"Speed":-9000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255},{"Size":250,"Speed":8000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":255}]},
- {"Name":"Triumph","Joints":[{"Size":70,"Speed":2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":215,"ColorB":0},{"Size":300,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":192,"ColorG":192,"ColorB":192},{"Size":150,"Speed":3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":184,"ColorG":115,"ColorB":51},{"Size":40,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":215,"ColorB":0},{"Size":70,"Speed":9000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":192,"ColorG":192,"ColorB":192},{"Size":250,"Speed":-8000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":184,"ColorG":115,"ColorB":51}]},
-  {"Name":"Zombie","Joints":[{"Size":70,"Speed":3500,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":300,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":150,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":40,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":70,"Speed":-9000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0}]},
-  {"Name":"Pizza","Joints":[{"Size":70,"Speed":3500,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":69,"ColorB":0},{"Size":300,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":215,"ColorB":0},{"Size":150,"Speed":3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":69,"ColorB":0},{"Size":40,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":215,"ColorB":0},{"Size":70,"Speed":-9000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":69,"ColorB":0}]},
-  {"Name":"Prism","Joints":[{"Size":20,"Speed":5000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":300,"Speed":-4000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":120,"Speed":8000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":100,"Speed":-20000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":100,"Speed":10000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255}]},
-  {"Name":"Infinity","Joints":[{"Size":70,"Speed":2000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":0},{"Size":200,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":0},{"Size":150,"Speed":3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":0,"ColorB":255},{"Size":400,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":255,"ColorB":0},{"Size":700,"Speed":4000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":255,"ColorG":0,"ColorB":255},{"Size":250,"Speed":-3000,"PulseEnabled":false,"PulseMinCoef":0.5,"PulseSpeed":1.0,"ColorR":0,"ColorG":255,"ColorB":255}]}
+  {
+    "Name": "Mr Pi",
+    "Joints": [
+      {
+        "Size": 100,
+        "Speed": 10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 100,
+        "Speed": 31415,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      }
+    ]
+  },
+  {
+    "Name": "Simple-dimple",
+    "Joints": [
+      {
+        "Size": 10,
+        "Speed": 1110,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 100,
+        "Speed": 100,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FF00FFFF"
+      },
+      {
+        "Size": 90,
+        "Speed": 3330,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      }
+    ]
+  },
+  {
+    "Name": "Porky",
+    "Joints": [
+      {
+        "Size": 100,
+        "Speed": 3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 165,
+        "ColorB": 0,
+        "JointColor": "#FFFFA500"
+      },
+      {
+        "Size": 90,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 128,
+        "ColorG": 0,
+        "ColorB": 128,
+        "JointColor": "#FF800080"
+      }
+    ]
+  },
+  {
+    "Name": "Flower",
+    "Joints": [
+      {
+        "Size": 100,
+        "Speed": 3200,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 20,
+        "ColorB": 147,
+        "JointColor": "#FFFF1493"
+      },
+      {
+        "Size": 90,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 127,
+        "JointColor": "#FF00FF7F"
+      }
+    ]
+  },
+  {
+    "Name": "Flower longer",
+    "Joints": [
+      {
+        "Size": 100,
+        "Speed": 3200,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 20,
+        "ColorB": 147,
+        "JointColor": "#FFFF1493"
+      },
+      {
+        "Size": 90,
+        "Speed": 1100,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 127,
+        "JointColor": "#FF00FF7F"
+      }
+    ]
+  },
+  {
+    "Name": "Triada",
+    "Joints": [
+      {
+        "Size": 5,
+        "Speed": 10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 150,
+        "Speed": 10,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 90,
+        "Speed": 30000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      }
+    ]
+  },
+  {
+    "Name": "Grannies' Pie",
+    "Joints": [
+      {
+        "Size": 22,
+        "Speed": 1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 215,
+        "ColorB": 0,
+        "JointColor": "#FFFFD700"
+      },
+      {
+        "Size": 150,
+        "Speed": 1,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 69,
+        "ColorB": 0,
+        "JointColor": "#FFFF4500"
+      },
+      {
+        "Size": 90,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 20,
+        "ColorB": 147,
+        "JointColor": "#FFFF1493"
+      },
+      {
+        "Size": 40,
+        "Speed": 1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FF00FFFF"
+      }
+    ]
+  },
+  {
+    "Name": "Diabotical",
+    "Joints": [
+      {
+        "Size": 22,
+        "Speed": 1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 150,
+        "Speed": 1,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 90,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 60,
+        "Speed": -20000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      }
+    ]
+  },
+  {
+    "Name": "Pie revert",
+    "Joints": [
+      {
+        "Size": 22,
+        "Speed": 1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 150,
+        "Speed": 1,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 90,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 60,
+        "Speed": -20000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      }
+    ]
+  },
+  {
+    "Name": "Medal",
+    "Joints": [
+      {
+        "Size": 60,
+        "Speed": -1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 215,
+        "ColorB": 0,
+        "JointColor": "#FFFFD700"
+      },
+      {
+        "Size": 300,
+        "Speed": 3,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 192,
+        "ColorG": 192,
+        "ColorB": 192,
+        "JointColor": "#FFC0C0C0"
+      },
+      {
+        "Size": 90,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 184,
+        "ColorG": 115,
+        "ColorB": 51,
+        "JointColor": "#FFB87333"
+      },
+      {
+        "Size": 200,
+        "Speed": -20000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 215,
+        "ColorB": 0,
+        "JointColor": "#FFFFD700"
+      },
+      {
+        "Size": 100,
+        "Speed": 10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 192,
+        "ColorG": 192,
+        "ColorB": 192,
+        "JointColor": "#FFC0C0C0"
+      }
+    ]
+  },
+  {
+    "Name": "Krishna",
+    "Joints": [
+      {
+        "Size": 60,
+        "Speed": -8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 90,
+        "Speed": -5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 100,
+        "Speed": -2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 100,
+        "Speed": 1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      }
+    ]
+  },
+  {
+    "Name": "Love story",
+    "Joints": [
+      {
+        "Size": 70,
+        "Speed": -8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 20,
+        "ColorB": 147,
+        "JointColor": "#FFFF1493"
+      },
+      {
+        "Size": 330,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 105,
+        "ColorB": 180,
+        "JointColor": "#FFFF69B4"
+      },
+      {
+        "Size": 100,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 182,
+        "ColorB": 193,
+        "JointColor": "#FFFFB6C1"
+      },
+      {
+        "Size": 120,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 20,
+        "ColorB": 147,
+        "JointColor": "#FFFF1493"
+      },
+      {
+        "Size": 90,
+        "Speed": 1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 105,
+        "ColorB": 180,
+        "JointColor": "#FFFF69B4"
+      }
+    ]
+  },
+  {
+    "Name": "Mickey Mouse",
+    "Joints": [
+      {
+        "Size": 20,
+        "Speed": -1000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": 3,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 120,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 100,
+        "Speed": -20000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 100,
+        "Speed": 10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      }
+    ]
+  },
+  {
+    "Name": "Cross",
+    "Joints": [
+      {
+        "Size": 20,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": -5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 120,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 100,
+        "Speed": -20000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 100,
+        "Speed": 10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      }
+    ]
+  },
+  {
+    "Name": "Hush",
+    "Joints": [
+      {
+        "Size": 20,
+        "Speed": 8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": -8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 120,
+        "Speed": -4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 100,
+        "Speed": 4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 100,
+        "Speed": 4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      },
+      {
+        "Size": 100,
+        "Speed": -4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FF00FFFF"
+      }
+    ]
+  },
+  {
+    "Name": "Shuriken",
+    "Joints": [
+      {
+        "Size": 20,
+        "Speed": 7000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": -5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 165,
+        "ColorB": 0,
+        "JointColor": "#FFFFA500"
+      },
+      {
+        "Size": 120,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 100,
+        "Speed": -20000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 100,
+        "Speed": 10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      }
+    ]
+  },
+  {
+    "Name": "Inception",
+    "Joints": [
+      {
+        "Size": 70,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 150,
+        "Speed": 3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 40,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 70,
+        "Speed": -9000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      }
+    ]
+  },
+  {
+    "Name": "Vaze",
+    "Joints": [
+      {
+        "Size": 70,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 150,
+        "Speed": 3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 40,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 70,
+        "Speed": -9000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      },
+      {
+        "Size": 250,
+        "Speed": 8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FF00FFFF"
+      }
+    ]
+  },
+  {
+    "Name": "Triumph",
+    "Joints": [
+      {
+        "Size": 70,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 215,
+        "ColorB": 0,
+        "JointColor": "#FFFFD700"
+      },
+      {
+        "Size": 300,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 192,
+        "ColorG": 192,
+        "ColorB": 192,
+        "JointColor": "#FFC0C0C0"
+      },
+      {
+        "Size": 150,
+        "Speed": 3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 184,
+        "ColorG": 115,
+        "ColorB": 51,
+        "JointColor": "#FFB87333"
+      },
+      {
+        "Size": 40,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 215,
+        "ColorB": 0,
+        "JointColor": "#FFFFD700"
+      },
+      {
+        "Size": 70,
+        "Speed": 9000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 192,
+        "ColorG": 192,
+        "ColorB": 192,
+        "JointColor": "#FFC0C0C0"
+      },
+      {
+        "Size": 250,
+        "Speed": -8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 184,
+        "ColorG": 115,
+        "ColorB": 51,
+        "JointColor": "#FFB87333"
+      }
+    ]
+  },
+  {
+    "Name": "Zombie",
+    "Joints": [
+      {
+        "Size": 70,
+        "Speed": 3500,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 300,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 150,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 40,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 70,
+        "Speed": -9000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      }
+    ]
+  },
+  {
+    "Name": "Pizza",
+    "Joints": [
+      {
+        "Size": 70,
+        "Speed": 3500,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 69,
+        "ColorB": 0,
+        "JointColor": "#FFFF4500"
+      },
+      {
+        "Size": 300,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 215,
+        "ColorB": 0,
+        "JointColor": "#FFFFD700"
+      },
+      {
+        "Size": 150,
+        "Speed": 3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 69,
+        "ColorB": 0,
+        "JointColor": "#FFFF4500"
+      },
+      {
+        "Size": 40,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 215,
+        "ColorB": 0,
+        "JointColor": "#FFFFD700"
+      },
+      {
+        "Size": 70,
+        "Speed": -9000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 69,
+        "ColorB": 0,
+        "JointColor": "#FFFF4500"
+      }
+    ]
+  },
+  {
+    "Name": "Prism",
+    "Joints": [
+      {
+        "Size": 20,
+        "Speed": 5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 300,
+        "Speed": -4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 120,
+        "Speed": 8000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 100,
+        "Speed": -20000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 100,
+        "Speed": 10000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      }
+    ]
+  },
+  {
+    "Name": "Infinity",
+    "Joints": [
+      {
+        "Size": 70,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      },
+      {
+        "Size": 200,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FF00FF00"
+      },
+      {
+        "Size": 150,
+        "Speed": 3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 400,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 700,
+        "Speed": 4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FFFF00FF"
+      },
+      {
+        "Size": 250,
+        "Speed": -3000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FF00FFFF"
+      }
+    ]
+  },
+  {
+    "Name": "Soothing",
+    "Joints": [
+      {
+        "Size": 185,
+        "Speed": 11000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FF000000"
+      },
+      {
+        "Size": 110,
+        "Speed": -16000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 199,
+        "ColorB": 255,
+        "JointColor": "#FF00C7FF"
+      },
+      {
+        "Size": 474,
+        "Speed": 2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 252,
+        "ColorG": 146,
+        "ColorB": 0,
+        "JointColor": "#FFFC9200"
+      },
+      {
+        "Size": 20,
+        "Speed": 0,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      }
+    ]
+  },
+  {
+    "Name": "Uber-Flower",
+    "Joints": [
+      {
+        "Size": 220,
+        "Speed": -5000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 0,
+        "JointColor": "#FFFFFF00"
+      },
+      {
+        "Size": 260,
+        "Speed": -9000,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FFFFFFFF"
+      },
+      {
+        "Size": 325,
+        "Speed": 18000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 255,
+        "ColorB": 249,
+        "JointColor": "#FF00FFF9"
+      },
+      {
+        "Size": 405,
+        "Speed": -9000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
+      }
+    ]
+  },
+  {
+    "Name": "Poo",
+    "Joints": [
+      {
+        "Size": 130,
+        "Speed": -2000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 143,
+        "ColorG": 92,
+        "ColorB": 0,
+        "JointColor": "#FF8F5C00"
+      },
+      {
+        "Size": 185,
+        "Speed": 4000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 165,
+        "ColorB": 0,
+        "JointColor": "#FFFFA500"
+      },
+      {
+        "Size": 50,
+        "Speed": 19000,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 186,
+        "ColorG": 120,
+        "ColorB": 0,
+        "JointColor": "#FFBA7800"
+      }
+    ]
+  }
 ]

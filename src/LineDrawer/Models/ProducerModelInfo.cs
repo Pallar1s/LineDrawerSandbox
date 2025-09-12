@@ -1,3 +1,5 @@
+using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
@@ -21,7 +23,7 @@ namespace LineDrawer
                 }
             }
         }
-        public JointModelInfo[] Joints { get; set; }
+        public ObservableCollection<JointModelInfo> Joints { get; set; }
         
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -36,7 +38,7 @@ namespace LineDrawer
             return new ProducerModelInfo
             {
                 Name = "New preset",
-                Joints = new JointModelInfo[]
+                Joints = new ObservableCollection<JointModelInfo>
                 {
                     new JointModelInfo
                     {
@@ -46,6 +48,27 @@ namespace LineDrawer
                     }
                 }
             };
+        }
+
+        public void Randomize()
+        {
+            var jointsCount = Random.Shared.Next(2, 7);
+
+            Joints.Clear();
+            for (int i = 0; i < jointsCount; i++)
+            {
+                
+                var newJoint = new JointModelInfo
+                {
+                    Size = Random.Shared.Next(1, 100) * 5,
+                    Speed = Random.Shared.Next(-20, 20) * 1000,
+                    Enabled = true,
+                    ColorR = Random.Shared.Next(0, 255),
+                    ColorG = Random.Shared.Next(0, 255),
+                    ColorB = Random.Shared.Next(0, 255),
+                };
+                Joints.Add(newJoint);
+            }
         }
     }
 }
