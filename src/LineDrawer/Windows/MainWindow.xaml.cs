@@ -22,8 +22,8 @@ namespace LineDrawer
     {
         private JointImageProducer producer;
 
-        private const int TraceLength = 35;
-        private const int BitmapSize = 2000;
+        private const int TraceLength = 75;
+        private const int BitmapSize = 2048;
         private const int BitmapSizeHalf = BitmapSize / 2;
         private double colorIteration = 0.0d;
         private Color defaultBitmapColor = Colors.White;
@@ -67,7 +67,9 @@ namespace LineDrawer
                 EnableAntialiasing = true,
                 AntialiasingLevel = 3,
                 EnableSmoothing = true,
-                SmoothingLevel = 5
+                SmoothingLevel = 5,
+                UseGradient = false,
+                LineThickness = 6
             };
             
             // Устанавливаем первый пресет как текущий, если есть
@@ -164,7 +166,7 @@ namespace LineDrawer
 
         private void DrawModel(Vector2[] positions)
         {
-            var drawTraceColor = this.defaultTraceColor;
+            var drawTraceColor = this.model.Joints.LastOrDefault()?.JointColor ?? this.defaultTraceColor;
             var drawBitmapColor = this.defaultBitmapColor;
 
             if (this.model.UseGradient)
@@ -199,14 +201,14 @@ namespace LineDrawer
                         // Используем улучшенную отрисовку линий
                         if (this.model.EnableAntialiasing || this.model.EnableSmoothing)
                         {
-                            this.bitmap.DrawAdvancedLine(x1, y1, x2, y2, jointColor, 6, 
+                            this.bitmap.DrawAdvancedLine(x1, y1, x2, y2, jointColor, this.model.LineThickness, 
                                 this.model.EnableAntialiasing ? this.model.AntialiasingLevel : 1,
                                 this.model.EnableSmoothing ? this.model.SmoothingLevel : 1);
                         }
                         else
                         {
                             // Стандартная отрисовка
-                            this.bitmap.DrawLineAa(x1, y1, x2, y2, jointColor, 6);
+                            this.bitmap.DrawLineAa(x1, y1, x2, y2, jointColor, this.model.LineThickness);
                         }
                     }
 

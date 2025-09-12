@@ -18,6 +18,7 @@ namespace LineDrawer
         private int antialiasingLevel;
         private bool enableSmoothing;
         private int smoothingLevel;
+        private int lineThickness;
         
         public ObservableCollection<JointModelInfo> Joints { get; set; }
         
@@ -68,6 +69,20 @@ namespace LineDrawer
                 if (this.useGradient != value)
                 {
                     this.useGradient = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+
+        public int LineThickness
+        {
+            get => this.lineThickness;
+            set
+            {
+                var newValue = Math.Max(1, Math.Min(50, value));
+                if (this.lineThickness != newValue)
+                {
+                    this.lineThickness = newValue;
                     this.OnPropertyChanged();
                 }
             }
@@ -133,9 +148,9 @@ namespace LineDrawer
         
         public ObservableCollection<ProducerModelInfo> Presets { get; set; }
         
-        private ProducerModelInfo currentPreset;
+        private ProducerModelInfo? currentPreset;
         
-        public ProducerModelInfo CurrentPreset
+        public ProducerModelInfo? CurrentPreset
         {
             get => this.currentPreset;
             set
@@ -143,12 +158,13 @@ namespace LineDrawer
                 if (this.currentPreset != value)
                 {
                     if (this.currentPreset?.Joints != null)
-                    {
                         this.currentPreset.Joints.CollectionChanged -= JointsOnCollectionChanged;
-                    }
-
+                    
                     this.currentPreset = value;
-                    this.currentPreset.Joints.CollectionChanged += JointsOnCollectionChanged;
+                    
+                    if (this.currentPreset?.Joints != null)
+                        this.currentPreset.Joints.CollectionChanged += JointsOnCollectionChanged;
+                    
                     ResetJointsByPreset();
                     this.OnPropertyChanged();
                 }
