@@ -1,3 +1,4 @@
+
 namespace ImageProducer
 {
     public class JointInfo

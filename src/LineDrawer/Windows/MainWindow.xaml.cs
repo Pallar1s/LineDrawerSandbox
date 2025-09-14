@@ -21,16 +21,13 @@ namespace LineDrawer
     public partial class MainWindow : Window
     {
         private JointImageProducer producer;
-
-        private const int TraceLength = 75;
+        
         private const int BitmapSize = 2048;
         private const int BitmapSizeHalf = BitmapSize / 2;
         private double colorIteration = 0.0d;
-        private Color defaultTraceColor = Colors.Red;
         
         private WriteableBitmap bitmap = new WriteableBitmap(BitmapSize, BitmapSize, 96, 96, PixelFormats.Bgr32, null);
-        private Queue<Vector2> traceQueue = new Queue<Vector2>(TraceLength);
-
+        
         private Matrix3x2 scaleTransform;
         private DateTime previousTime;
         private double lastDeltaSeconds;
@@ -65,13 +62,11 @@ namespace LineDrawer
                 OverallSpeed = 2,
                 PauseRender = true,
                 ShowJoints = true,
-                ShowTrace = true,
                 Presets = modelCollection,
                 EnableAntialiasing = true,
                 AntialiasingLevel = 3,
                 EnableSmoothing = true,
                 SmoothingLevel = 5,
-                UseGradient = false,
                 LineThickness = 6,
                 EnableFading = false,
                 FadeSpeed = 0.4,
@@ -133,7 +128,6 @@ namespace LineDrawer
                 Speed = this.model.OverallSpeed * 0.1f
             };
             
-            this.traceQueue.Clear();
             this.bitmap.Clear();
             AdvancedLineDrawing.ClearCache(); // Очищаем кэш при сбросе
             this.model.PauseRender = false;
@@ -179,19 +173,6 @@ namespace LineDrawer
             // Плавное затухание текущего содержимого битмапа (с интервалом и сеткой)
             if (this.model is { EnableFading: true, FadeSpeed: > 0 })
                 this.FadeImage();
-            
-            var drawTraceColor = this.model.Joints.LastOrDefault()?.JointColor ?? this.defaultTraceColor;
-
-            if (this.model.UseGradient)
-            {
-                var gradientColor = ColorExtensions.Hsl2Rgb(this.colorIteration, 0.5, 0.5);
-                this.colorIteration += 0.001;
-
-                if (this.colorIteration >= 1.0d)
-                    this.colorIteration = 0;
-
-                drawTraceColor = gradientColor;
-            }
 
             //Основная отрисовка
             if (this.model.PreviousPositions != null)
@@ -200,10 +181,7 @@ namespace LineDrawer
             this.MainImage.Source = this.bitmap;
             this.MainCanvas.Children.Clear();
 
-            if (this.model.ShowJoints || this.model.ShowTrace)
-            {
-                DrawJointsAndTrace(positions, drawTraceColor);
-            }
+            DrawJointsAndTrace(positions);
         }
         
         private void FadeImage()
@@ -235,8 +213,9 @@ namespace LineDrawer
 
                 if (modelJoint.Enabled)
                 {
-                    // Используем цвет конкретного сустава
-                    var jointColor = Color.FromRgb((byte)modelJoint.ColorR, (byte)modelJoint.ColorG, (byte)modelJoint.ColorB);
+                    var jointColor = modelJoint.GetColor();
+                    if (modelJoint.Gradient)
+                        modelJoint.ColorIteration += 0.001;
                         
                     var x1 = (int)(pos.X * BitmapSizeHalf) + BitmapSizeHalf;
                     var y1 = (int)(pos.Y * BitmapSizeHalf) + BitmapSizeHalf;
@@ -261,11 +240,11 @@ namespace LineDrawer
             }
         }
 
-        private void DrawJointsAndTrace(Vector2[] positions, Color drawTraceColor)
+        private void DrawJointsAndTrace(Vector2[] positions)
         {
-            Vector2 lastPos = default;
             var prevX = 0;
             var prevY = 0;
+            var k = 0;
             foreach (var pos in positions)
             {
                 var vector = Vector2.Transform(pos, this.scaleTransform);
@@ -279,30 +258,33 @@ namespace LineDrawer
                         3, this.model.EnableAntialiasing);
                 }
 
+                var joint = this.model.Joints[k];
+                if (joint.ShowTrace)
+                {
+                    var traceQueue = this.model.Joints[k].TraceQueue;
+                    traceQueue.Enqueue(pos);
+                    
+                    if (traceQueue.Count > JointModelInfo.TraceLength)
+                        traceQueue.Dequeue();
+                    
+                    var i = 0;
+                    var  traceColor = joint.GetColor();
+                     
+                    foreach (var item in traceQueue)
+                    {
+                        double opacity = i / (double)JointModelInfo.TraceLength;
+                        var traceVector = Vector2.Transform(item, this.scaleTransform);
+                        var traceNewX = (int)traceVector.X;
+                        var traceNewY = (int)traceVector.Y;
+                        traceColor.A = (byte)(opacity * 255);
+                        this.MainCanvas.DrawCircle(traceNewX, traceNewY, (int)(20 * opacity), (int)(20 * opacity), traceColor);
+                        i++;
+                    }
+                }
+
                 prevX = newX;
                 prevY = newY;
-                lastPos = pos;
-            }
-
-            this.traceQueue.Enqueue(lastPos);
-
-            if (this.traceQueue.Count > TraceLength)
-                this.traceQueue.Dequeue();
-
-            if (this.model.ShowTrace)
-            {
-                var i = 0;
-                var traceColor = drawTraceColor;
-                foreach (var item in this.traceQueue)
-                {
-                    double opacity = i / (double)TraceLength;
-                    var vector = Vector2.Transform(item, this.scaleTransform);
-                    var newX = (int)vector.X;
-                    var newY = (int)vector.Y;
-                    traceColor.A = (byte)(opacity * 255);
-                    this.MainCanvas.DrawCircle(newX, newY, (int)(20 * opacity), (int)(20 * opacity), traceColor);
-                    i++;
-                }
+                k++;
             }
         }
 

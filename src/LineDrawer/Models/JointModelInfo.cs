@@ -1,14 +1,20 @@
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using LineDrawer.Annotations;
 using System.Windows.Media;
+using Newtonsoft.Json;
 
 namespace LineDrawer
 {
     public class JointModelInfo: INotifyPropertyChanged
     {
+        public const int TraceLength = 75;
         private int size;
         private int speed;
+        private bool showTrace = false;
+        private bool gradient = false;
         private bool enabled = true;
         private bool pulseEnabled = false;
         private float pulseMinCoef = 0.5f;
@@ -16,7 +22,34 @@ namespace LineDrawer
         private int colorR = 255;
         private int colorG = 255;
         private int colorB = 255;
-        
+        private double colorIteration = 0.0d;
+        private Queue<Vector2> traceQueue = new Queue<Vector2>(TraceLength);
+
+        [JsonIgnore]
+        public Queue<Vector2> TraceQueue => traceQueue;
+
+        public Color GetColor()
+        {
+            if (this.Gradient)
+            {
+                return ColorExtensions.Hsl2Rgb(this.colorIteration, 0.5, 0.5);
+            }
+            
+            return Color.FromRgb((byte)colorR, (byte)colorG, (byte)colorB);
+        }
+
+        [JsonIgnore]
+        public double ColorIteration
+        {
+            get => colorIteration;
+            set
+            {
+                colorIteration = value;
+                if (this.colorIteration > 1.0d)
+                    this.colorIteration = 0.0d;
+            }
+        }
+
         public int Size
         {
             get { return this.size;}
@@ -40,6 +73,36 @@ namespace LineDrawer
                 if (value != this.speed)
                 {
                     this.speed = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+        
+        public bool ShowTrace {
+            get
+            {
+                return this.showTrace;
+            }
+            set
+            {
+                if (value != this.showTrace)
+                {
+                    this.showTrace = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+        
+        public bool Gradient {
+            get
+            {
+                return this.gradient;
+            }
+            set
+            {
+                if (value != this.gradient)
+                {
+                    this.gradient = value;
                     this.OnPropertyChanged();
                 }
             }

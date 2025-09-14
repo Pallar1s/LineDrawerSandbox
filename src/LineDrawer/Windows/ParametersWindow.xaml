@@ -52,8 +52,6 @@
                             <ComboBoxItem><sys:Int32>48</sys:Int32></ComboBoxItem>
                         </ComboBox>
                         <CheckBox Content="Показывать суставы" IsChecked="{Binding Path=ShowJoints, Mode=TwoWay}" Margin="0,0,10,0"/>
-                        <CheckBox Content="Показывать след" IsChecked="{Binding Path=ShowTrace, Mode=TwoWay}" Margin="0,0,10,0"/>
-                        <CheckBox Content="Градиентный след" IsChecked="{Binding Path=UseGradient, Mode=TwoWay}"/>
                         
                     </StackPanel>
                     <!-- Затухание -->
@@ -145,6 +143,8 @@
                     <DataGridTextColumn Header="Размер" Binding="{Binding Size, Mode=TwoWay}" Width="60"/>
                     <DataGridTextColumn Header="Скорость" Binding="{Binding Speed, Mode=TwoWay}" Width="80"/>
                     <DataGridCheckBoxColumn Header="Вкл" Binding="{Binding Enabled, Mode=TwoWay}" Width="40"/>
+                    <DataGridCheckBoxColumn Header="Шлейф" Binding="{Binding ShowTrace, Mode=TwoWay}" Width="40"/>
+                    <DataGridCheckBoxColumn Header="Градиент" Binding="{Binding Gradient, Mode=TwoWay}" Width="40"/>
                     <DataGridCheckBoxColumn Header="Пульсация" Binding="{Binding PulseEnabled, Mode=TwoWay}" Width="70"/>
                     <DataGridTextColumn Header="Мин. коэф." Binding="{Binding PulseMinCoef, Mode=TwoWay, StringFormat=F2}" Width="80"/>
                     <DataGridTextColumn Header="Скор. пульсации" Binding="{Binding PulseSpeed, Mode=TwoWay, StringFormat=F2}" Width="100"/>

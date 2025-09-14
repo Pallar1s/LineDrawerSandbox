@@ -5,6 +5,8 @@
       {
         "Size": 100,
         "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -17,6 +19,8 @@
       {
         "Size": 100,
         "Speed": 31415,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -34,6 +38,8 @@
       {
         "Size": 10,
         "Speed": 1110,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -46,6 +52,8 @@
       {
         "Size": 100,
         "Speed": 100,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -58,6 +66,8 @@
       {
         "Size": 90,
         "Speed": 3330,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -75,6 +85,8 @@
       {
         "Size": 100,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -87,6 +99,8 @@
       {
         "Size": 90,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -104,6 +118,8 @@
       {
         "Size": 100,
         "Speed": 3200,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -116,6 +132,8 @@
       {
         "Size": 90,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -133,6 +151,8 @@
       {
         "Size": 100,
         "Speed": 3200,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -145,6 +165,8 @@
       {
         "Size": 90,
         "Speed": 1100,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -162,6 +184,8 @@
       {
         "Size": 5,
         "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -174,6 +198,8 @@
       {
         "Size": 150,
         "Speed": 10,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -186,6 +212,8 @@
       {
         "Size": 90,
         "Speed": 30000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -203,6 +231,8 @@
       {
         "Size": 22,
         "Speed": 1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -215,6 +245,8 @@
       {
         "Size": 150,
         "Speed": 1,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -227,6 +259,8 @@
       {
         "Size": 90,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -239,6 +273,8 @@
       {
         "Size": 40,
         "Speed": 1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -256,6 +292,8 @@
       {
         "Size": 22,
         "Speed": 1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -268,6 +306,8 @@
       {
         "Size": 150,
         "Speed": 1,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -280,6 +320,8 @@
       {
         "Size": 90,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -292,6 +334,8 @@
       {
         "Size": 60,
         "Speed": -20000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -309,6 +353,8 @@
       {
         "Size": 22,
         "Speed": 1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -321,6 +367,8 @@
       {
         "Size": 150,
         "Speed": 1,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -333,6 +381,8 @@
       {
         "Size": 90,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -345,6 +395,8 @@
       {
         "Size": 60,
         "Speed": -20000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -362,6 +414,8 @@
       {
         "Size": 60,
         "Speed": -1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -374,6 +428,8 @@
       {
         "Size": 300,
         "Speed": 3,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -386,6 +442,8 @@
       {
         "Size": 90,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -398,6 +456,8 @@
       {
         "Size": 200,
         "Speed": -20000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -410,6 +470,8 @@
       {
         "Size": 100,
         "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -427,6 +489,8 @@
       {
         "Size": 60,
         "Speed": -8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -439,6 +503,8 @@
       {
         "Size": 300,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -451,6 +517,8 @@
       {
         "Size": 90,
         "Speed": -5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -463,6 +531,8 @@
       {
         "Size": 100,
         "Speed": -2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -475,6 +545,8 @@
       {
         "Size": 100,
         "Speed": 1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -492,6 +564,8 @@
       {
         "Size": 70,
         "Speed": -8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -504,6 +578,8 @@
       {
         "Size": 330,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -516,6 +592,8 @@
       {
         "Size": 100,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -528,6 +606,8 @@
       {
         "Size": 120,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -540,6 +620,8 @@
       {
         "Size": 90,
         "Speed": 1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -557,6 +639,8 @@
       {
         "Size": 20,
         "Speed": -1000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -569,6 +653,8 @@
       {
         "Size": 300,
         "Speed": 3,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -581,6 +667,8 @@
       {
         "Size": 120,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -593,6 +681,8 @@
       {
         "Size": 100,
         "Speed": -20000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -605,6 +695,8 @@
       {
         "Size": 100,
         "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -622,6 +714,8 @@
       {
         "Size": 20,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -634,6 +728,8 @@
       {
         "Size": 300,
         "Speed": -5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -646,6 +742,8 @@
       {
         "Size": 120,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -658,6 +756,8 @@
       {
         "Size": 100,
         "Speed": -20000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -670,6 +770,8 @@
       {
         "Size": 100,
         "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -687,6 +789,8 @@
       {
         "Size": 20,
         "Speed": 8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -699,6 +803,8 @@
       {
         "Size": 300,
         "Speed": -8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -711,6 +817,8 @@
       {
         "Size": 120,
         "Speed": -4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -723,6 +831,8 @@
       {
         "Size": 100,
         "Speed": 4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -735,6 +845,8 @@
       {
         "Size": 100,
         "Speed": 4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -747,6 +859,8 @@
       {
         "Size": 100,
         "Speed": -4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -764,6 +878,8 @@
       {
         "Size": 20,
         "Speed": 7000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -776,6 +892,8 @@
       {
         "Size": 300,
         "Speed": -5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -788,6 +906,8 @@
       {
         "Size": 120,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -800,6 +920,8 @@
       {
         "Size": 100,
         "Speed": -20000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -812,6 +934,8 @@
       {
         "Size": 100,
         "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -829,6 +953,8 @@
       {
         "Size": 70,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -841,6 +967,8 @@
       {
         "Size": 300,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -853,6 +981,8 @@
       {
         "Size": 150,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -865,6 +995,8 @@
       {
         "Size": 40,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -877,6 +1009,8 @@
       {
         "Size": 70,
         "Speed": -9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -894,6 +1028,8 @@
       {
         "Size": 70,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -906,6 +1042,8 @@
       {
         "Size": 300,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -918,6 +1056,8 @@
       {
         "Size": 150,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -930,6 +1070,8 @@
       {
         "Size": 40,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -942,6 +1084,8 @@
       {
         "Size": 70,
         "Speed": -9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -954,6 +1098,8 @@
       {
         "Size": 250,
         "Speed": 8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -971,6 +1117,8 @@
       {
         "Size": 70,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -983,6 +1131,8 @@
       {
         "Size": 300,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -995,6 +1145,8 @@
       {
         "Size": 150,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1007,6 +1159,8 @@
       {
         "Size": 40,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1019,6 +1173,8 @@
       {
         "Size": 70,
         "Speed": 9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1031,6 +1187,8 @@
       {
         "Size": 250,
         "Speed": -8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1048,6 +1206,8 @@
       {
         "Size": 70,
         "Speed": 3500,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1060,6 +1220,8 @@
       {
         "Size": 300,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1072,6 +1234,8 @@
       {
         "Size": 150,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1084,6 +1248,8 @@
       {
         "Size": 40,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1096,6 +1262,8 @@
       {
         "Size": 70,
         "Speed": -9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1113,6 +1281,8 @@
       {
         "Size": 70,
         "Speed": 3500,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1125,6 +1295,8 @@
       {
         "Size": 300,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1137,6 +1309,8 @@
       {
         "Size": 150,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1149,6 +1323,8 @@
       {
         "Size": 40,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1161,6 +1337,8 @@
       {
         "Size": 70,
         "Speed": -9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1178,6 +1356,8 @@
       {
         "Size": 20,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1190,6 +1370,8 @@
       {
         "Size": 300,
         "Speed": -4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1202,6 +1384,8 @@
       {
         "Size": 120,
         "Speed": 8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1214,6 +1398,8 @@
       {
         "Size": 100,
         "Speed": -20000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1226,6 +1412,8 @@
       {
         "Size": 100,
         "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1243,6 +1431,8 @@
       {
         "Size": 70,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1255,6 +1445,8 @@
       {
         "Size": 200,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1267,6 +1459,8 @@
       {
         "Size": 150,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1279,6 +1473,8 @@
       {
         "Size": 400,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1291,6 +1487,8 @@
       {
         "Size": 700,
         "Speed": 4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1303,6 +1501,8 @@
       {
         "Size": 250,
         "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1320,6 +1520,8 @@
       {
         "Size": 185,
         "Speed": 11000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1332,6 +1534,8 @@
       {
         "Size": 110,
         "Speed": -16000,
+        "ShowTrace": true,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1344,6 +1548,8 @@
       {
         "Size": 474,
         "Speed": 2000,
+        "ShowTrace": true,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1356,6 +1562,8 @@
       {
         "Size": 20,
         "Speed": 0,
+        "ShowTrace": true,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1373,6 +1581,8 @@
       {
         "Size": 220,
         "Speed": -5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1385,6 +1595,8 @@
       {
         "Size": 260,
         "Speed": -9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1397,6 +1609,8 @@
       {
         "Size": 325,
         "Speed": 18000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1409,6 +1623,8 @@
       {
         "Size": 405,
         "Speed": -9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1426,6 +1642,8 @@
       {
         "Size": 130,
         "Speed": -2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1438,6 +1656,8 @@
       {
         "Size": 185,
         "Speed": 4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1450,6 +1670,8 @@
       {
         "Size": 50,
         "Speed": 19000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1467,6 +1689,8 @@
       {
         "Size": 355,
         "Speed": -14000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1479,6 +1703,8 @@
       {
         "Size": 35,
         "Speed": 4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1491,6 +1717,8 @@
       {
         "Size": 415,
         "Speed": 11000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1503,6 +1731,8 @@
       {
         "Size": 405,
         "Speed": 11000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1515,6 +1745,8 @@
       {
         "Size": 15,
         "Speed": 13000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1532,6 +1764,8 @@
       {
         "Size": 110,
         "Speed": -8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1544,6 +1778,8 @@
       {
         "Size": 135,
         "Speed": 18000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1556,6 +1792,8 @@
       {
         "Size": 250,
         "Speed": -10000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1573,6 +1811,8 @@
       {
         "Size": 55,
         "Speed": -17000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1585,6 +1825,8 @@
       {
         "Size": 35,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1597,6 +1839,8 @@
       {
         "Size": 330,
         "Speed": 13000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1614,6 +1858,8 @@
       {
         "Size": 375,
         "Speed": -2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1626,6 +1872,8 @@
       {
         "Size": 280,
         "Speed": 4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1638,6 +1886,8 @@
       {
         "Size": 360,
         "Speed": 6000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1650,6 +1900,8 @@
       {
         "Size": 180,
         "Speed": -19000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1667,6 +1919,8 @@
       {
         "Size": 215,
         "Speed": 17000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1679,6 +1933,8 @@
       {
         "Size": 295,
         "Speed": -19000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1691,6 +1947,8 @@
       {
         "Size": 380,
         "Speed": -19000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1703,6 +1961,8 @@
       {
         "Size": 260,
         "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1720,6 +1980,8 @@
       {
         "Size": 40,
         "Speed": 5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1732,6 +1994,8 @@
       {
         "Size": 355,
         "Speed": -4000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1744,6 +2008,8 @@
       {
         "Size": 115,
         "Speed": 2000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1756,6 +2022,8 @@
       {
         "Size": 475,
         "Speed": -5000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1773,6 +2041,8 @@
       {
         "Size": 90,
         "Speed": -8000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1785,6 +2055,8 @@
       {
         "Size": 5,
         "Speed": -9000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1797,6 +2069,8 @@
       {
         "Size": 20,
         "Speed": 17000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
@@ -1809,6 +2083,8 @@
       {
         "Size": 370,
         "Speed": 6000,
+        "ShowTrace": false,
+        "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,

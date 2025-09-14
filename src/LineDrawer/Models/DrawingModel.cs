@@ -11,9 +11,7 @@ namespace LineDrawer
     public class DrawingModel : INotifyPropertyChanged
     {
         private bool showJoints;
-        private bool showTrace;
         private int overallSpeed;
-        private bool useGradient;
         private bool enableAntialiasing;
         private int antialiasingLevel;
         private bool enableSmoothing;
@@ -37,19 +35,6 @@ namespace LineDrawer
                 }
             }
         }
-        
-        public bool ShowTrace
-        {
-            get => this.showTrace;
-            set
-            {
-                if (this.showTrace != value)
-                {
-                    this.showTrace = value;
-                    this.OnPropertyChanged();
-                }
-            }
-        }
 
         public int OverallSpeed
         {
@@ -59,19 +44,6 @@ namespace LineDrawer
                 if (this.overallSpeed != value)
                 {
                     this.overallSpeed = value;
-                    this.OnPropertyChanged();
-                }
-            }
-        }
-        
-        public bool UseGradient
-        {
-            get => this.useGradient;
-            set
-            {
-                if (this.useGradient != value)
-                {
-                    this.useGradient = value;
                     this.OnPropertyChanged();
                 }
             }
