@@ -47,7 +47,7 @@ namespace LineDrawer
 
             try
             {
-                var presetsJson = File.ReadAllText("Presets\\presets.json");
+                var presetsJson = File.ReadAllText("presets.json");
                 var presetItems = JsonConvert.DeserializeObject<ProducerModelInfo[]>(presetsJson);
                 modelCollection = new ObservableCollection<ProducerModelInfo>(presetItems);
             }
@@ -87,6 +87,7 @@ namespace LineDrawer
             
             this.Reset();
             previousTime = DateTime.Now;
+            this.MainImage.Source = this.bitmap;
             Task.Run(this.Run);
         }
 
@@ -176,12 +177,9 @@ namespace LineDrawer
 
             //Основная отрисовка
             if (this.model.PreviousPositions != null)
-                DrawNewStep(positions);
+                this.DrawNewStepOnBitmap(positions);
 
-            this.MainImage.Source = this.bitmap;
-            this.MainCanvas.Children.Clear();
-
-            DrawJointsAndTrace(positions);
+            this.DrawEffects(positions);
         }
         
         private void FadeImage()
@@ -204,7 +202,7 @@ namespace LineDrawer
             }
         }
 
-        private void DrawNewStep(Vector2[] positions)
+        private void DrawNewStepOnBitmap(Vector2[] positions)
         {
             var i = 0;
             foreach (var pos in this.model.PreviousPositions)
@@ -240,8 +238,10 @@ namespace LineDrawer
             }
         }
 
-        private void DrawJointsAndTrace(Vector2[] positions)
+        private void DrawEffects(Vector2[] positions)
         {
+            this.MainCanvas.Children.Clear();
+            
             var prevX = 0;
             var prevY = 0;
             var k = 0;
@@ -259,6 +259,7 @@ namespace LineDrawer
                 }
 
                 var joint = this.model.Joints[k];
+                
                 if (joint.ShowTrace)
                 {
                     var traceQueue = this.model.Joints[k].TraceQueue;

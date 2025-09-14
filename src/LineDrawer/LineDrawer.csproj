@@ -37,4 +37,11 @@
       </Page>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\..\Presets\presets.json">
+        <Link>presets.json</Link>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>
