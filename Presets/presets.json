@@ -1119,7 +1119,7 @@
         "Speed": 2000,
         "ShowTrace": false,
         "Gradient": false,
-        "Enabled": true,
+        "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
@@ -1137,10 +1137,10 @@
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
-        "ColorR": 192,
-        "ColorG": 192,
-        "ColorB": 192,
-        "JointColor": "#FFC0C0C0"
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
       },
       {
         "Size": 150,
@@ -1208,7 +1208,7 @@
         "Speed": 3500,
         "ShowTrace": false,
         "Gradient": false,
-        "Enabled": true,
+        "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
@@ -1241,9 +1241,9 @@
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
         "ColorR": 0,
-        "ColorG": 255,
+        "ColorG": 143,
         "ColorB": 0,
-        "JointColor": "#FF00FF00"
+        "JointColor": "#FF008F00"
       },
       {
         "Size": 40,
@@ -1644,7 +1644,7 @@
         "Speed": -2000,
         "ShowTrace": false,
         "Gradient": false,
-        "Enabled": true,
+        "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
@@ -1691,7 +1691,7 @@
         "Speed": -14000,
         "ShowTrace": false,
         "Gradient": false,
-        "Enabled": true,
+        "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
@@ -1705,7 +1705,7 @@
         "Speed": 4000,
         "ShowTrace": false,
         "Gradient": false,
-        "Enabled": true,
+        "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
@@ -1719,7 +1719,7 @@
         "Speed": 11000,
         "ShowTrace": false,
         "Gradient": false,
-        "Enabled": true,
+        "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
@@ -1778,7 +1778,7 @@
       {
         "Size": 135,
         "Speed": 18000,
-        "ShowTrace": false,
+        "ShowTrace": true,
         "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
@@ -1792,7 +1792,7 @@
       {
         "Size": 250,
         "Speed": -10000,
-        "ShowTrace": false,
+        "ShowTrace": true,
         "Gradient": false,
         "Enabled": true,
         "PulseEnabled": false,
@@ -1892,10 +1892,10 @@
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
-        "ColorR": 111,
-        "ColorG": 9,
-        "ColorB": 188,
-        "JointColor": "#FF6F09BC"
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FFFFFFFF"
       },
       {
         "Size": 180,
@@ -1906,10 +1906,10 @@
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
-        "ColorR": 51,
-        "ColorG": 18,
-        "ColorB": 1,
-        "JointColor": "#FF331201"
+        "ColorR": 255,
+        "ColorG": 170,
+        "ColorB": 170,
+        "JointColor": "#FFFFAAAA"
       }
     ]
   },
@@ -1996,7 +1996,7 @@
         "Speed": -4000,
         "ShowTrace": false,
         "Gradient": false,
-        "Enabled": true,
+        "Enabled": false,
         "PulseEnabled": false,
         "PulseMinCoef": 0.5,
         "PulseSpeed": 1.0,
@@ -2093,6 +2093,81 @@
         "ColorG": 33,
         "ColorB": 218,
         "JointColor": "#FFDA21DA"
+      }
+    ]
+  },
+  {
+    "Name": "Airplane",
+    "Joints": [
+      {
+        "Size": 25,
+        "Speed": 10000,
+        "ShowTrace": false,
+        "Gradient": false,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 128,
+        "ColorB": 0,
+        "JointColor": "#FF008000"
+      },
+      {
+        "Size": 25,
+        "Speed": -6000,
+        "ShowTrace": false,
+        "Gradient": false,
+        "Enabled": false,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 255,
+        "ColorB": 255,
+        "JointColor": "#FFFFFFFF"
+      },
+      {
+        "Size": 25,
+        "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 0,
+        "ColorG": 0,
+        "ColorB": 255,
+        "JointColor": "#FF0000FF"
+      },
+      {
+        "Size": 500,
+        "Speed": -3000,
+        "ShowTrace": false,
+        "Gradient": false,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 165,
+        "ColorB": 0,
+        "JointColor": "#FFFFA500"
+      },
+      {
+        "Size": 500,
+        "Speed": 3000,
+        "ShowTrace": false,
+        "Gradient": false,
+        "Enabled": true,
+        "PulseEnabled": false,
+        "PulseMinCoef": 0.5,
+        "PulseSpeed": 1.0,
+        "ColorR": 255,
+        "ColorG": 0,
+        "ColorB": 0,
+        "JointColor": "#FFFF0000"
       }
     ]
   }
