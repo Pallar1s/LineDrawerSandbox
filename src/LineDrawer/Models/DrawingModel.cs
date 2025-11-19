@@ -2,12 +2,22 @@ using System;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using LineDrawer.Annotations;
 
 namespace LineDrawer
 {
+    public enum PostEffectMode
+    {
+        None,
+        SoftGlow,
+        EdgePulse,
+        ChromaticAberration,
+        FogOverlay
+    }
+    
     public class DrawingModel : INotifyPropertyChanged
     {
         private bool showJoints;
@@ -20,6 +30,15 @@ namespace LineDrawer
         private bool enableFading;
         private double fadeSpeed;
         private int fadeGridStep;
+        private bool enablePostEffect;
+        private PostEffectMode postEffectMode = PostEffectMode.SoftGlow;
+        private readonly ObservableCollection<ShaderParameterModel> shaderParameters = new();
+        
+        public DrawingModel()
+        {
+            this.Joints = new ObservableCollection<JointModelInfo>();
+            this.RebuildShaderParameters();
+        }
         
         public ObservableCollection<JointModelInfo> Joints { get; set; }
         
@@ -158,6 +177,37 @@ namespace LineDrawer
             }
         }
         
+        public bool EnablePostEffect
+        {
+            get => this.enablePostEffect;
+            set
+            {
+                if (this.enablePostEffect != value)
+                {
+                    this.enablePostEffect = value;
+                    this.OnPropertyChanged();
+                }
+            }
+        }
+        
+        public PostEffectMode PostEffectMode
+        {
+            get => this.postEffectMode;
+            set
+            {
+                if (this.postEffectMode != value)
+                {
+                    this.postEffectMode = value;
+                    this.OnPropertyChanged();
+                    this.RebuildShaderParameters();
+                }
+            }
+        }
+        
+        public ObservableCollection<ShaderParameterModel> ShaderParameters => this.shaderParameters;
+        
+        public event EventHandler? ShaderParametersChanged;
+        
         public bool PauseRender { get; set; }
         
         public bool Halt { get; set; }
@@ -212,11 +262,39 @@ namespace LineDrawer
 
         public event EventHandler? ModelReset;
         public event PropertyChangedEventHandler? PropertyChanged;
+        
+        public double GetShaderParameterValue(string key)
+        {
+            var parameter = this.shaderParameters.FirstOrDefault(p => p.Key == key);
+            return parameter?.Value ?? 0.0;
+        }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        
+        private void RebuildShaderParameters()
+        {
+            foreach (var parameter in this.shaderParameters)
+                parameter.ValueChanged -= ShaderParameterOnValueChanged;
+
+            this.shaderParameters.Clear();
+
+            foreach (var definition in ShaderParameterDefinitions.GetDefinitions(this.postEffectMode))
+            {
+                var parameter = new ShaderParameterModel(definition);
+                parameter.ValueChanged += ShaderParameterOnValueChanged;
+                this.shaderParameters.Add(parameter);
+            }
+
+            this.ShaderParametersChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void ShaderParameterOnValueChanged(object? sender, EventArgs e)
+        {
+            this.ShaderParametersChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

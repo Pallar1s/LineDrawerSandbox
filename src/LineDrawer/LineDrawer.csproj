@@ -44,4 +44,11 @@
       </Content>
     </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Shaders\SoftGlow.ps" />
+    <Resource Include="Shaders\EdgePulse.ps" />
+    <Resource Include="Shaders\ChromaticAberration.ps" />
+    <Resource Include="Shaders\FogOverlay.ps" />
+  </ItemGroup>
+
 </Project>

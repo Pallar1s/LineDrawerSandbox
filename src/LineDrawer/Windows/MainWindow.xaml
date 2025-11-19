@@ -17,6 +17,7 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Вид">
                 <MenuItem x:Name="ParametersMenuItem" Header="Параметры" Click="ParametersMenuItem_Click"/>
+                <MenuItem Header="Шейдеры..." Click="ShaderMenuItem_Click"/>
             </MenuItem>
         </Menu>
         

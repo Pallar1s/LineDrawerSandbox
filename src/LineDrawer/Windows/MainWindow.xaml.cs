@@ -9,8 +9,11 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Effects;
 using System.Windows.Media.Imaging;
 using ImageProducer;
+using LineDrawer.Effects;
+using LineDrawer.Windows;
 using Newtonsoft.Json;
 
 namespace LineDrawer
@@ -36,6 +39,8 @@ namespace LineDrawer
         private int fadePhaseY;
         private readonly DrawingModel model;
         private ParametersWindow parametersWindow;
+        private ShaderSettingsWindow shaderSettingsWindow;
+        private readonly Dictionary<PostEffectMode, ShaderEffect> postEffects;
         
         public DrawingModel Model => this.model;
         
@@ -70,7 +75,9 @@ namespace LineDrawer
                 LineThickness = 6,
                 EnableFading = false,
                 FadeSpeed = 0.4,
-                FadeGridStep = 3
+                FadeGridStep = 3,
+                EnablePostEffect = true,
+                PostEffectMode = PostEffectMode.SoftGlow
             };
             
             // Устанавливаем первый пресет как текущий, если есть
@@ -80,14 +87,24 @@ namespace LineDrawer
             }
             
             this.model.PropertyChanged += ModelOnPropertyChanged;
+            this.model.ShaderParametersChanged += ModelOnShaderParametersChanged;
             this.model.ModelReset += ModelOnModelReset;
             
             InitializeComponent();
             this.DataContext = this.model;
+
+            this.postEffects = new Dictionary<PostEffectMode, ShaderEffect>
+            {
+                { PostEffectMode.SoftGlow, new SoftGlowEffect() },
+                { PostEffectMode.EdgePulse, new EdgePulseEffect() },
+                { PostEffectMode.ChromaticAberration, new ChromaticAberrationEffect() },
+                { PostEffectMode.FogOverlay, new FogOverlayEffect() }
+            };
             
             this.Reset();
             previousTime = DateTime.Now;
             this.MainImage.Source = this.bitmap;
+            this.UpdatePostEffect();
             Task.Run(this.Run);
         }
 
@@ -100,6 +117,9 @@ namespace LineDrawer
         {
             if (e.PropertyName == nameof(this.model.OverallSpeed))
                 this.producer.Speed = this.model.OverallSpeed * 0.1f;
+            
+            if (e.PropertyName is nameof(DrawingModel.EnablePostEffect) or nameof(DrawingModel.PostEffectMode))
+                this.UpdatePostEffect();
         }
 
         public void Reset()
@@ -321,12 +341,78 @@ namespace LineDrawer
             }
         }
 
+        private void ShaderMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.shaderSettingsWindow == null)
+            {
+                this.shaderSettingsWindow = new ShaderSettingsWindow(this.model)
+                {
+                    Owner = this
+                };
+                this.shaderSettingsWindow.Closed += (_, _) => this.shaderSettingsWindow = null;
+                this.shaderSettingsWindow.Show();
+            }
+            else
+            {
+                if (!this.shaderSettingsWindow.IsVisible)
+                    this.shaderSettingsWindow.Show();
+                
+                this.shaderSettingsWindow.Activate();
+            }
+        }
+
         private void MainWindow_OnClosing(object? sender, CancelEventArgs e)
         {
             this.model.Halt = true;
             
             if (parametersWindow != null)
                 parametersWindow.Close();
+            
+            if (shaderSettingsWindow != null)
+                shaderSettingsWindow.Close();
+        }
+        
+        private void ModelOnShaderParametersChanged(object? sender, EventArgs e)
+        {
+            this.Dispatcher.Invoke(this.UpdatePostEffect);
+        }
+        
+        private void UpdatePostEffect()
+        {
+            if (this.MainImage == null)
+                return;
+            
+            if (!this.model.EnablePostEffect || this.model.PostEffectMode == PostEffectMode.None)
+            {
+                this.MainImage.Effect = null;
+                return;
+            }
+
+            if (!this.postEffects.TryGetValue(this.model.PostEffectMode, out var effect))
+            {
+                this.MainImage.Effect = null;
+                return;
+            }
+
+            switch (effect)
+            {
+                case SoftGlowEffect softGlow:
+                    softGlow.Strength = this.model.GetShaderParameterValue(ShaderParameterKeys.Strength);
+                    break;
+                case EdgePulseEffect edgePulse:
+                    edgePulse.Strength = this.model.GetShaderParameterValue(ShaderParameterKeys.Strength);
+                    break;
+                case ChromaticAberrationEffect chromatic:
+                    var offset = this.model.GetShaderParameterValue(ShaderParameterKeys.Offset);
+                    chromatic.Offset = offset * 0.001;
+                    break;
+                case FogOverlayEffect fog:
+                    fog.Density = this.model.GetShaderParameterValue(ShaderParameterKeys.FogDensity);
+                    fog.Height = this.model.GetShaderParameterValue(ShaderParameterKeys.FogHeight);
+                    break;
+            }
+
+            this.MainImage.Effect = effect;
         }
     }
 }
